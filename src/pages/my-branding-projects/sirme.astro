@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro'; // 1. Added import
+import ProjectTags from '../../components/ProjectTags.astro';
+import FeaturedProjects from '../../components/FeaturedProjects.astro';
+---
+
+<Layout 
+title="Sirmé Project" 
+bodyClass="sirme-page" 
+mainClass="sirme-page__main">
+
+    <Breadcrumb 
+    currentPage="Sirmé"
+    parentCategory="My Branding Projects" 
+    parentUrl="/my-branding-projects" />
+
+    <section class="hero-section">
+        <h1 class="hero-section__title">Sirmé &ndash;<br/>Lorem ipsum</h1>
+        <ProjectTags />
+        <div class="hero-section__text-container">
+            <h2 class="text-container__title">Context</h2>
+            <div class="text-container__description">
+                <p class="text-justify hero-section__subtitle">
+                    <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
+                </p>
+                <p class="text-justify hero-section-description__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="graphic-charter-breakdown">
+        <div class="section graphic-charter-page">
+            <div class="graphic-charter-description">
+                <h3 class="graphic-charter-description__title">The Logotype and the Symbol</h3>
+                <p class="text-justify graphic-charter-description__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+                </p>
+            </div>
+            <div class="graphic-charter-logos-spacing">
+                <img 
+                src="/asset/images/logo-sirme-spacing.png" 
+                alt="Sirmé Logotype" 
+                class="sirme-img logo-sirme-spacing"
+                />
+                <img 
+                src="/asset/images/symbole-sirme-spacing.png" 
+                alt="Sirmé Symbol" 
+                class="sirme-img symbol-sirme-spacing"
+                />
+            </div>
+        </div>
+
+        <div class="section graphic-charter-page">
+            <div class="graphic-charter-colorboard">
+                <img 
+                src="/asset/images/sirme-color-board.png" 
+                alt="Sirmé Color Board" 
+                class="sirme-img sirme-color-board"
+                />
+            </div>
+            <div class="graphic-charter-description">
+                <h3 class="graphic-charter-description__title">The Color Board</h3>
+                <p class="text-justify graphic-charter-description__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+                </p>
+            </div>
+        </div>
+
+        <div class="section graphic-charter-page">
+            <div class="graphic-charter-description">
+                <h3 class="graphic-charter-description__title">The Logotype and the Symbol</h3>
+                <p class="text-justify graphic-charter-description__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+                </p>
+            </div>
+            <div class="graphic-charter-logos">
+                <img 
+                src="/asset/images/logo-and-color-sirme.png" 
+                alt="Sirmé Logotype" 
+                class="sirme-img logo-sirme-spacing"
+                />
+            </div>
+        </div>
+
+        <div class="section graphic-charter-page">
+            <div class="graphic-charter-description">
+                <h3 class="graphic-charter-description__title">The Pattern</h3>
+                <p class="text-justify graphic-charter-description__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+                </p>
+            </div>
+            <div class="graphic-charter-logos">
+                <img 
+                src="/asset/images/sirme-pattern.png" 
+                alt="Sirmé Pattern" 
+                class="sirme-img logo-sirme-spacing"
+                />
+            </div>
+        </div>
+
+    </section>
+
+    <section class="graphic-charter-mockups">    
+        <div class="section section-header-container">
+            <h2 class="mockup-title">The mockups</h2>
+            <div class="mockup-description">
+                <p class="text-justify mockup-description__subtitle">
+                    Les photographies des éléments suivants ont été générées par intelligence artificielle. L'implémentation des éléments de marque Sirmé ont, quant à eux, été réalisés manuellement via Photoshop ou Figma.
+                </p>
+            </div>
+        </div>
+
+        <div class="mockup-signature">
+            <img 
+            src="/asset/images/sirme-signature.png" 
+            alt="Sirmé Mockup Signature" 
+            class="sirme-img mockup-signature__image"
+            />
+        </div>
+
+        <div class="mockup-banner">
+            <img 
+            src="/asset/images/sirme-mockup-card.png" 
+            alt="Sirmé Mockup Card" 
+            class="sirme-img mockup-banner__image"
+            />
+            <img 
+            src="/asset/images/sirme-mockup-product-box.png" 
+            alt="Sirmé Mockup Product Box" 
+            class="sirme-img mockup-banner__image"
+            />
+            <img 
+            src="/asset/images/sirme-mockup-shopping-bag.png" 
+            alt="Sirmé Mockup Shopping Bag" 
+            class="sirme-img mockup-banner__image"
+            />
+        </div>
+
+        <div class="brand-library">
+            <img 
+            src="/asset/images/sirme-library.png" 
+            alt="Sirmé Brand Library" 
+            class="sirme-img brand-library__image"
+            />
+        </div>
+
+    </section>
+
+    <section class="section sirme-see-more__section">
+        <h2 class="see-more__title">See more about Sirmé</h2>
+        <a href="https://www.instagram.com/sirme_hair/" target="_blank" rel="noopener noreferrer" class="icon-container"><img src="/asset/graphics/icons/icon-instagram.svg" alt="" class="link-icon sirme-instagram-icon"></a>
+    </section>
+
+    <FeaturedProjects/>
+
+</Layout>

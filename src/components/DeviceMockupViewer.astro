@@ -1,0 +1,93 @@
+---
+interface Props {
+  projectTitle: string;
+  mobileUrl: string;
+  tabletUrl: string;
+  desktopUrl: string;
+}
+
+const { projectTitle, mobileUrl, tabletUrl, desktopUrl } = Astro.props;
+// <DeviceMockupViewer/>
+---
+
+<section class="section prototype-frame__section">
+        <h2 class="prototype-frame__title">Prototype</h2>
+        <div class="prototype-frame__nav">
+            
+            <button 
+            type="button" 
+            class="prototype-nav--desktop" 
+            data-device="desktop"
+            data-url={desktopUrl}>
+            Desktop
+            </button>
+
+            <button 
+            type="button" 
+            class="prototype-nav--tablet" 
+            data-device="tablet"
+            data-url={tabletUrl}>
+            Tablet
+            </button>
+
+            <button 
+            type="button" 
+            class="prototype-nav--mobile" 
+            data-device="mobile"
+            data-url={mobileUrl}>
+            Mobile
+            </button>
+        </div>
+
+        <div class="device-mockup device-mockup--mobile">
+            <iframe 
+            src={mobileUrl} 
+            title={`Figma mobile prototype for ${projectTitle}`} 
+            class="mobile-mockup__iframe"
+            allowfullscreen
+            loading="lazy">
+            </iframe>
+
+            <img 
+                src="/asset/images/iPhone-16-dark-header.png" 
+                alt="Mobile Mockup Frame" 
+                class="mobile-mockup__frame"
+                aria-hidden="true"
+            />
+        </div>
+
+        <div class="device-mockup device-mockup--tablet">
+            <iframe 
+            src={tabletUrl}
+            title={`Figma tablet prototype for ${projectTitle}`} 
+            class="tablet-mockup__iframe"
+            allowfullscreen
+            loading="lazy">
+            </iframe>
+
+            <img 
+                src="/asset/images/mockup-tablet-black.png" 
+                alt="Tablet Mockup Frame" 
+                class="tablet-mockup__frame"
+                aria-hidden="true"
+            />
+        </div>
+
+        <div class="device-mockup device-mockup--desktop">
+            <iframe 
+            src={desktopUrl} 
+            title={`Figma desktop prototype for ${projectTitle}`} 
+            class="desktop-mockup__iframe"
+            allowfullscreen
+            loading="lazy">
+            </iframe>
+
+            <img 
+                src="/asset/images/mockup-desktop-black.png" 
+                alt="Desktop Mockup Frame" 
+                class="desktop-mockup__frame"
+                aria-hidden="true"
+            />
+        </div>
+
+    </section>

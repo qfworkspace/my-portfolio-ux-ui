@@ -1,0 +1,262 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CaseStudyNav from '../components/CaseStudyNav.astro';
+---
+
+<Layout title="Eumeria — 3D Creation">
+    <div class="projects-3d-page">
+
+        <div class="projects-3d-page__main">
+
+            <nav class="breadcrumb"
+            aria-label="breadcrumb">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a href="/"
+                        class="breadcrumb__link">
+                        Home
+                        </a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--active">
+                        <span
+                        class="breadcrumb__link"
+                        aria-current="page"> <!-- aria-current is an accessibility attribute defined by WAI-ARIA that informs screen readers and assistive technologies that an element represents the currently active page within a set of navigation links -->
+                        My 3D Project   
+                        </span> 
+                    </li>
+                </ol>
+            </nav>
+
+            <section class="section projects-3d-page__hero-section">
+                <div class="hero-section__text-container">
+                    <h1>My 3D Project</h1>
+                    <div class="projects-3d-page__paragraph-container">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque mollis odio, vel rhoncus tortor pellentesque non. Fusce non tincidunt diam. Donec ullamcorper euismod magna, sit amet tincidunt quam laoreet et.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque mollis odio, vel rhoncus tortor pellentesque non. Fusce non tincidunt diam. Donec ullamcorper euismod magna, sit amet tincidunt quam laoreet et.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque mollis odio, vel rhoncus tortor pellentesque non. Fusce non tincidunt diam. Donec ullamcorper euismod magna, sit amet tincidunt quam laoreet et.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque mollis odio, vel rhoncus tortor pellentesque non. Fusce non tincidunt diam. Donec ullamcorper euismod magna, sit amet tincidunt quam laoreet et.
+                        </p>
+                    </div>
+                </div>
+                    
+                <a 
+                href="#project-case-study"
+                class="hero-section__nav-arrow-link"
+                aria-label="Scroll to the Next Section">
+                    <img 
+                    src="/asset/graphics/icons/icon-arrow-down-nav.svg"
+                    alt=""
+                    class="hero-section__nav-arrow">
+                </a>
+            </section>
+
+            <section
+            id="project-case-study" 
+            class="project-case-study">
+                <h2 class="projects-3d-page__title">Eumeria<br/>The Sensory Decompression Pod</h2>
+                <div class="project-tag-container">
+                    <div class="project-tag-container--type">Product Design</div>
+                    <div class="project-tag-container--software">Adobe Dimension</div>
+                </div>
+
+                <!-- Summary */ -->
+                <CaseStudyNav />
+
+                <article id="overview" class="case-study-block case-study-block--overview">
+                    <h3 class="case-study-title">Overview</h3>
+                    
+                    <dl class="case-study-meta">
+                        <div class="meta-item">
+                            <dt>Role:</dt>
+                            <dd>Lead UX/UI Designer &amp; Researcher</dd>
+                        </div>
+
+                        <div class="meta-item">
+                            <dt>Team:</dt>
+                            <dd>3 people (Marketing &amp; Strategy project)</dd>
+                        </div>
+
+                        <div class="meta-item">
+                            <dt>Scope:</dt>
+                            <dd>User Research, Ergonomics &amp; Feature Definition, 3D Concept Sketching, App UX/UI</dd>
+                        </div>
+
+                        <div class="meta-item">
+                            <dt>Timeline:</dt>
+                            <dd>3 weeks</dd>
+                        </div>
+
+                        <div class="meta-item">
+                            <dt>Collaborators:</dt>
+                            <dd>Wissem Z. (Marketing), Achwak S. (Marketing)</dd>
+                        </div>
+                    </dl>
+                </article>
+
+                
+                <div class="project-case-study__grid">
+
+                    <article 
+                    id="context" 
+                    class="case-study-block case-study--right-indent">
+                        <h3 class="case-study-title">Context</h3>
+                        <p 
+                        class="text-justify case-study-block__text">
+                        Healthcare environments place immense cognitive, emotional, and physical demands on professionals. In high-pressure medical settings, acute fatigue frequently leads to burnout, reduced performance, and mental strain. Despite the critical need for recovery during shifts, staff break areas often fail to provide the quiet or isolation necessary for genuine restorative rest. The challenge was to design a targeted solution that allows professionals to decompress rapidly and effectively within limited break windows.
+                        </p>
+                    </article>
+
+                    <article 
+                    id="concept"
+                    class="case-study-block case-study--left-indent">
+                        <h3 class="case-study-title">Concept</h3>
+                        <p 
+                        class="text-justify case-study-block__text">
+                        Eumeria is a sensory rest pod engineered as a private restorative cocoon. Inspired by space exploration to evoke immediate mental detachment and immersion, the pod provides a dedicated sanctuary inside busy workplaces. Its primary innovation lies in its dynamic dome: transparent when vacant, it shifts to full opacity once activated. This guarantees complete anonymity, visual blackout, and psychological safety, enabling users to power-nap or meditate without workplace distractions.
+                        </p>
+                    </article>
+
+                    <article 
+                    id="strategy-process"
+                    class="case-study-block case-study--right-indent">
+                        <h3 class="case-study-title">Strategy & Process</h3>
+                        <p 
+                        class="text-justify case-study-block__text">
+                        Developed within a strategic and operational marketing framework, the project began with qualitative field research and an empirical survey conducted with <strong>134 healthcare workers</strong> at Annecy, France’s hospital center. The study investigated occupational fatigue, shift strain, and rest opportunities across various hospital staff, including nurses, care assistants, and surgical personnel. 
+                        </p>
+                        <p 
+                        class="text-justify case-study-block__text">
+                        Key findings revealed that <strong>over 70%</strong> of respondents experienced severe workplace fatigue on a weekly or daily basis, with the majority citing <strong>constant environmental stimuli (bells, phones, lack of quiet) as the primary barrier to recovery</strong>. When asked about a dedicated sensory rest solution, <strong>96.7%</strong> of surveyed personnel confirmed they would use it regularly during shifts, ranking massage cushions, aromatherapy micro-diffusion, ambient music, and air purification as their most desired features.  
+                        </p>
+                        <p 
+                        class="text-justify case-study-block__text">
+                        To turn these insights into a viable commercial offering, the project developed a B2B business model for healthcare institutions and clinics:
+                        </p>
+                        <ul class="case-study-block__list">
+                                <li class="case-study-item">
+                                    <strong>Procurement:</strong> Direct unit sales with flexible financing for medical facilities.
+                                </li>
+                                <li class="case-study-item">
+                                    <strong>Turnkey Operations:</strong> Integrated monthly maintenance and weekly dedicated cleaning protocols to meet strict clinical hygiene standards.
+                                </li>
+                                <li class="case-study-item">
+                                    <strong>Digital Ecosystem:</strong> A companion mobile application enabling individual profile customization, session reservations, and automated sensory presets.
+                                </li>
+                            </ul>
+                    </article>
+
+                    <article 
+                    id="materials-functionalities"
+                    class="case-study-block case-study--left-indent">
+                        <h3 class="case-study-title">Materials & Functionalities</h3>
+                        <p 
+                        class="text-justify case-study-block__text">
+                        Eumeria integrates advanced multi-sensory features into an ergonomic form factor:
+                        </p>
+                        <ul class="case-study-block__list">
+                            <li class="case-study-item">
+                                <strong>Electrochromic Shell:</strong> Switches from clear glass to an opaque, acoustic-dampening, and signal-blocking barrier for total isolation.
+                            </li>
+                            <li class="case-study-item">
+                                <strong>Ergonomic Seating:</strong> Contoured recliner upholstered in breathable acoustic fabric, designed to relieve spinal pressure and support micro-nap posture.
+                            </li>
+                            <li class="case-study-item">
+                                <strong>Natural Wood Accents:</strong> Conceals integrated massage hardware and heating elements.
+                            </li>
+                            <li class="case-study-item">
+                                <strong>Atmospheric Controls:</strong> Built-in essential oil micro-diffusers, air purification, zoned audio, and low-glare perimeter lighting adjustable via companion presets.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article 
+                    id="spatial-validation"
+                    class="case-study-block case-study--center-indent">
+                        <h3 class="case-study-title">AR Spatial Validation</h3>
+                        <p 
+                        class="text-justify case-study-block__text">
+                        To validate real-world feasibility, 3D assets were tested using augmented reality simulations.
+                        </p>
+                    </article>
+
+                </div>
+            </section>
+
+            <section id="renders-gallery" class="section projects-3d-page__gallery">
+                
+                <div class="gallery-item gallery-item1">
+                    <img 
+                    src="/asset/images/eumeria-front-close.png" 
+                    alt="A rendered 3D image showing the full open interior of a futuristically designed relaxation pod. It features an ergonomic dark wood and grey fabric recliner, several small, cylindrical throw pillows (white, grey, and brown), and a prominent glowing blue LED light ring circling the padded seating area. The exterior dome is made of transparent acrylic and contains glowing 'stars' and nebula-like patterns, reinforcing the space-inspired theme." 
+                    class="gallery-item__img ">
+                </div>
+
+                <div class="gallery-item gallery-item2">
+                    <img 
+                    src="/asset/images/eumeria-side.png" 
+                    alt="A 3D render showing a side profile angle of the Eumeria relaxation pod. This perspective highlights how the glowing blue LED light strip traces the contour of the seating surface and emphasizes the placement of the cylindrical pillows against the curving dark wood and grey fabric interior. A control light on the side of the chair armrest is visible. The background is a simplified deep blue with star-like points." 
+                    class="gallery-item__img">
+                </div>
+
+                <div class="gallery-item gallery-item3">
+                    <img 
+                    src="/asset/images/eumeria-beackrest-close-up.png" 
+                    alt="A macro-detail render of the interior of the relaxation pod. The focus is on the headrest, which is upholstered in a textured, grey woven fabric. Centered on the headrest is a subtle, circular logo (a stylized, swirling design). The shot emphasizes the soft texture of the upholstery and includes a brief glimpse of the glowing blue LED strip at the bottom of the frame." 
+                    class="gallery-item__img">
+                </div>
+
+                <div class="gallery-item gallery-item4">
+                    <img 
+                    src="/asset/images/eumeria-seat-close-up.png" 
+                    alt="A 3D close-up showing the interface between the padded grey fabric backrest of the chair and the surrounding dark wood paneling. The edge of the wood panel is slightly angled, and a vertical, glowing blue LED indicator is visible on the inner armrest, right next to the white textured cylindrical pillow. This perspective highlights the integration of materials and technology." 
+                    class="gallery-item__img">
+                </div>
+
+                <div class="gallery-item gallery-item5">
+                    <img 
+                    src="/asset/images/eumeria-front-global.png" 
+                    alt="A 3D rendering presented in a graphic collage frame. It shows the open Eumeria relaxation pod, which is placed on a series of tiered, circular deep-blue platforms with stepped edges. This presents the product as a centerpiece. The full pod, chair, and lighting are visible from a high perspective. The background is a simplified blue field with star patterns." 
+                    class="gallery-item__img">
+                </div>
+
+                <div class="gallery-item gallery-item6">
+                    <img 
+                    src="/asset/images/eumeria-back.png" 
+                    alt="A 3D render of the entire Eumeria relaxation pod. The transparent dome, which was visible in previous shots, is now completely closed and has become opaque, forming a seamless, frosted sphere with a slight pearlescent sheen. A single, distinct white light illuminates the peak of the sphere, reflecting slightly. It sits on a deep blue base within a star-filled environment." 
+                    class="gallery-item__img">
+                </div>
+
+                <div class="gallery-item gallery-item7">
+                    <video 
+                    src="/asset/videos/eumeria-ar.mp4" 
+                    class="gallery-item__img"
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                    aria-label="An augmented reality video demonstrating a realistic 3D model of the Eumeria relaxation pod projected into a real-world room.">
+                        <!-- Fallback message for older browsers -->
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="gallery-item gallery-item8">
+                    <img 
+                    src="/asset/images/eumeria-draft.jpeg" 
+                    alt="A hand-drawn graphite concept sketch illustrating the circular base and interior structure of the Eumeria relaxation pod, accompanied by detailed handwritten French design annotations pointing to features such as reclining massage seating, speakers, USB ports, power buttons, and hidden compartments for air purification and essential oil reservoirs." 
+                    class="gallery-item__img">
+                </div>
+
+            </section>
+
+        </div>
+    
+    </div>
+</Layout>

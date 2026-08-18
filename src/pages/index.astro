@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+
+	<div class="home-page">
+        <!-- Hero Section -->
+        <section class="section home-page__section hero-section">
+            <!-- Background Video -->
+            <video class="hero-section__bg-video" autoplay muted loop playsinline>
+                <source src="/asset/videos/bg-hero-video.mp4" type="video/mp4">
+            </video>
+            <!-- Text Container -->
+            <div class="hero-section__text-container">
+                <h1 class="hero-title">Qetsia Fontange:<br/>A user-based Portfolio</h1>
+                <p class="hero-subtitle">Psychology. Creation. Experience.</p>
+            </div>
+            <!-- Nav Arrow -->
+            <a 
+            href="#home__quote" 
+            class="hero-section__nav-arrow-link" 
+            aria-label="Scroll to the Next Section">
+                <img 
+                src="/asset/graphics/icons/icon-arrow-down-nav.svg" 
+                alt="" 
+                class="hero-section__nav-arrow">
+            </a>
+        </section>
+
+        <!-- Quote Section -->
+        <figure id="home__quote" class="home__quote">
+            <blockquote class="quote">&ldquo;People ignore design that ignores people.&rdquo;</blockquote>
+            <figcaption class="author">&ndash; Frank Chimero</figcaption>
+        </figure>
+
+        <!-- Ice Breaking Section -->
+        <section class="section home-page__section ice-breaking">
+            <div class="ice-breaking__container">
+                <h2 class="ice-breaking__title">Let's break the ice</h2>
+                <p class="ice-breaking__subtitle">Nunc eleifend neque ultricies purus tristique dignissim. Vestibulum fermentum, ante non scelerisque viverra.</p>
+
+                <div class="quiz-carousel-container">
+
+                    <div class="quiz-carousel">
+                        <!-- Quiz Carousel 1 -->
+                        <div class="quiz-slide quiz-slide--active" data-slide="1">
+                            <button type="button" class="quiz-option" data-correct="false">
+                                <img src="/asset/graphics/icons/badge-quiz-false.svg" alt="" class="badge badge--false">
+                                <span class="question-indicator">A</span>
+                                <span class="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci ante ?</span>
+                            </button>
+                            <button type="button" class="quiz-option" data-correct="false">
+                                <img src="/asset/graphics/icons/badge-quiz-false.svg" alt="" class="badge badge--false">
+                                <span class="question-indicator">B</span>
+                                <span class="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci ante ?</span>
+                            </button>
+                            <button type="button" class="quiz-option" data-correct="true">
+                                <img src="/asset/graphics/icons/bagde-quiz-true.svg" alt="" class="badge badge--true">
+                                <span class="question-indicator">C</span>
+                                <span class="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci ante ?</span>
+                            </button>
+                        </div>
+                    
+                        <!-- Quiz Carousel 2 -->
+                        <div class="quiz-slide quiz-slide--inactive" data-slide="2">
+                            <button type="button" class="quiz-option" data-correct="false">
+                                <img src="/asset/graphics/icons/badge-quiz-false.svg" alt="" class="badge badge--false">
+                                <span class="question-indicator">A</span>
+                                <span class="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci ante ?</span>
+                            </button>
+                            <button type="button" class="quiz-option" data-correct="false">
+                                <img src="/asset/graphics/icons/badge-quiz-false.svg" alt="" class="badge badge--false">
+                                <span class="question-indicator">B</span>
+                                <span class="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci ante ?</span>
+                            </button>
+                            <button type="button" class="quiz-option" data-correct="true">
+                                <img src="/asset/graphics/icons/bagde-quiz-true.svg" alt="" class="badge badge--true">
+                                <span class="question-indicator">C</span>
+                                <span class="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci ante ?</span>
+                            </button>
+                        </div>
+
+                        <!-- Quiz Carousel 3 -->
+                        <div class="quiz-slide quiz-slide--inactive" data-slide="3">
+                            <button type="button" class="quiz-option" data-correct="false">
+                                <img src="/asset/graphics/icons/badge-quiz-false.svg" alt="" class="badge badge--false">
+                                <span class="question-indicator">A</span>
+                                <span class="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci ante ?</span>
+                            </button>
+                            <button type="button" class="quiz-option" data-correct="true">
+                                <img src="/asset/graphics/icons/bagde-quiz-true.svg" alt="" class="badge badge--true">
+                                <span class="question-indicator">B</span>
+                                <span class="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci ante ?</span>
+                            </button>
+                            <button type="button" class="quiz-option" data-correct="false">
+                                <img src="/asset/graphics/icons/badge-quiz-false.svg" alt="" class="badge badge--false">
+                                <span class="question-indicator">C</span>
+                                <span class="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci ante ?</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- Page Progress Indicator -->
+                    <div class="carousel-page-indicator" aria-label="Quiz Progress">
+                        <div class="carousel-page-indicator__progress carousel-page-indicator__progress--active" aria-label="Quiz Slide 1"></div>
+                        <div class="carousel-page-indicator__progress" aria-label="Quiz Slide 2"></div>
+                        <div class="carousel-page-indicator__progress" aria-label="Quiz Slide 3"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="section home-page__section home-about">
+            <div class="home-about__wrapper">
+                <h2 class="home-about__title">Who am I?</h2>
+                <img src="/asset/images/profile-picture-qetsia-fontange.png" alt="Qetsia Fontange" class="home-about__profile-picture">
+                <p class="home-about__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut orci ante. Nunc eleifend neque ultricies purus tristique dignissim. Vestibulum fermentum, ante non scelerisque viverra, mauris est euismod lectus, vestibulum dictum leo neque sed orci.</p>
+                <a href="/about" class="button home-about__btn">Find Out More</a>
+            </div>
+        </section>
+
+        <section class="section home-page__section home-reference">
+            <h2 class="home-reference__title">My references</h2>
+            <div class="home-reference__profile-picture-container">
+                <img src="/asset/images/profile-picture-person.png" alt="" class="home-reference__profile-picture home-reference__profile-picture--background">
+                <img src="/asset/images/profile-picture-gregory-mugnier.png" alt="Grégory Mugnier" class="home-reference__profile-picture home-reference__profile-picture--highlight">
+                <img src="/asset/images/profile-picture-person.png" alt="" class="home-reference__profile-picture home-reference__profile-picture--background">
+            </div>
+            <figure class="home-reference__quote-wrapper">
+                <blockquote class="home-reference__quote">&ldquo;Qetsia [...] has developed methodological expertise and the ability to work independently, which will enable her to successfully deliver the projects it is targeting.&rdquo;</blockquote>
+                <figcaption class="home-reference__author">Grégory Mugnier,<br/>
+                    PhD in Marketing & Consumer Psychology, and Personality of 2023 in Marketing & Advertising</figcaption>
+            </figure>
+            <a href="/my-references" class="button home-reference__button">Check Out my Recommendations</a>
+        </section>
+
+        <section class="section home-page__section home-nav">
+            <h2 class="home-nav__title">My Work</h2>
+            <nav class="home-nav__wrapper">
+                <ul class="home-nav__list">
+                    <li class="home-nav__item home-nav__projects"><a href="/my-ux-ui-projects" class="home-nav__link">My UX/UI Projects</a></li>
+                    <li class="home-nav__item home-nav__creations"><a href="/my-3d-project" class="home-nav__link">My 3D Project</a></li>
+                    <li class="home-nav__item home-nav__logo"><a href="/my-branding-projects" class="home-nav__link">My Brandings<br/> Projects</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="section home-page__section home-contact">
+            <h2 class="home-contact__title">Contact Me</h2>
+            <a href="/contact" class="button contact__button">Let's discuss!</a>
+        </section>
+    </div>
+
+</Layout>

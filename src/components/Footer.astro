@@ -1,0 +1,48 @@
+---
+// src/components/Footer.astro
+---
+
+<footer class="site-width footer">
+        <div class="footer__container">
+            <div class="footer__top-container">
+                <div class="footer__contact-icon-container">
+                    <!-- Icons -->
+                    <a href="mailto:qetsia.fontange@gmail.com" 
+                        class="footer__email-link" 
+                        aria-label="Send an Email">
+                            <div class="icon-container 
+                                footer__icon-container">
+                                    <img src="/asset/graphics/icons/icon-mail.svg" 
+                                    alt="" 
+                                    class="footer__icon">
+                            </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/qetsia-fontange/"
+                        aria-label="Reach for my Linkedin"
+                        class="footer__linkedin-link"
+                        target="_blank"
+                        rel="noopener noreferrer"> <!-- target="_blank" ensures the link opens in a new tab / rel="noopener noreferrer" prevents potential security/performance leaks in older browsers -->
+                            <div class="icon-container footer__icon-container">
+                                <img src="/asset/graphics/icons/icon-linkedin.svg" 
+                                alt="" 
+                                class="footer__icon">
+                            </div>
+                    </a>
+                </div>
+                <div class="footer__text-container">
+                    <h2 class="footer__title title-underline">My expertise</h2>
+                    <ul class="footer__list">
+                        <li class="footer__item">User Experience</li>
+                        <li class="footer__item">User Interface</li>
+                        <li class="footer__item">Brand Identity</li>
+                    </ul>
+                    <a href="/acknowledgements" class="button footer__button">Acknowledgements</a>
+                </div>
+                <div class="footer__empty-container"></div> <!-- To balance the footer space -->
+            </div>
+            <div class="footer__bottom-container">
+                <p class="footer__copyright">© A portfolio designed and coded with passion by Qetsia Fontange</p>
+                <p class="footer__copyright copyright__discreet">Figma, Astro, HTML & CSS</p>
+            </div>
+        </div>
+    </footer>

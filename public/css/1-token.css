@@ -1,0 +1,154 @@
+:root {
+    /* Primitive tokens */
+    /* Colors */
+    --blue-50: rgb(153, 182, 255);
+    --blue-500: rgb(89, 115, 179);
+    --blue-900:rgb(44, 52, 75);
+
+    --brown-50: rgb(220, 207, 176);
+    --green-neon: rgb(183, 245, 186);
+
+    --neutral-50: rgb(255, 255, 255);
+    --neutral-100: rgb(247, 252, 252);
+    --neutral-200: rgb(197, 197, 197);
+    --neutral-500: rgb(170, 170, 170);
+    --neutral-900: rgb(15, 19, 26);
+
+    /* Transparency */
+    --blue-900-transparency-60: rgba(44, 52, 75, 0.6);
+    --green-neon-transparency-80: rgba(183, 245, 186, 0.8);
+    --neutral-50-transparency-50: rgba(255, 255, 255, 0.5);
+    --neutral-50-transparency-70: rgba(255, 255, 255, 0.7);
+    --neutral-900-transparency-35: rgba(0, 0, 0, 0.35);
+
+    /* Semantic tokens */
+    /* Fonts Families*/
+    --font-family-heading: "Anton", system-ui, sans-serif;
+    --font-family-paragraph: "Montserrat", system-ui, sans-serif;
+    
+    /* Font Size */
+    --fs-hero: 3rem; /* 48px */
+    --fs-h1: 2.375rem; /*38px */
+    --fs-h2: 1.875rem; /* 30px */
+    --fs-h3: 1.5rem; /* 24px */
+    --fs-h4: 1.25rem; /* 20px */
+    --fs-body: 1rem; /* 16px */
+
+    /* Font Line & Spaces */
+    --lh-heading: 1.1;
+    --ls-heading: 0.02rem;
+    --lh-paragraph: 1.5;
+
+    /* Font Colors */
+    --fc-brand: var(--blue-900);
+    --fc-global-light: var(--neutral-100);
+    --fc-global-dark: var(--neutral-900);
+    --fc-heading-light: var(--neutral-50);
+    --fc-heading-dark: var(--neutral-900);
+    --fc-paragraph-light: var(--neutral-50);
+    --fc-paragraph-dark: var(--neutral-900);
+    --fc-btn: var(--neutral-900);
+
+    /* Spacings */
+    --spacing-body-padding-inline: 1.25rem; /* 20 px */
+    --spacing-header-padding-inline: 1.25rem; /* 20px */
+    --spacing-header-padding-block: 1.25rem; /* 20px */
+    --spacing-footer-padding-inline: 1.25rem; /* 20 px */
+    --spacing-footer-padding-block: 3.5rem; /* 56px */
+    --spacing-section-padding-block: 3.5rem; /* 56px */
+    --spacing-section-gap: 2rem; /* 32px */
+    --spacing-container-gap: 1.25rem; /* 20px */
+    --spacing-card-padding: 1.25rem; /* 20px */
+    --spacing-card-gap: 0.4rem; /* 32 px */
+    --spacing-btn-padding-inline: 1.25rem; /* 20px */
+    --spacing-btn-padding-block: 1rem; /* 16px */
+
+    --spacing-project-page-padding-top: 8.625rem; /* 138px */
+    --spacing-project-container-card-margin-inline: 1.25rem; /* 20 px */
+    --spacing-project-container-card-padding-inline: 1.25rem; /* 20 px */
+    --spacing-project-container-card-padding-block: 2.5rem; /* 20 px */
+    --spacing-project-container-card-gap: 0.4rem;
+    
+    /* Radii */
+    --radius-card: 1.875rem; /* 30px */
+    --radius-btn: 9999px;
+
+    /* Shadows */
+    /* --formula: x, y, blur, rgba(); */
+    --shadow-btn-highlight: 0px 0px 30px var(--green-neon-transparency-80);
+    --shadow-btn-default: 0px 0px 10px var(--blue-900-transparency-60);
+    --shadow-navbar: 0px 4px 13px var(--neutral-900);
+
+    /* Backgrounds */
+    --bg-header: var(--blue-900);
+    --bg-body-default: var(--blue-900);
+    --bg-btn-primary-default: var(--blue-50);
+    --bg-btn-primary-hover: var(--green-neon);
+    --bg-footer: var(--blue-900);
+
+}
+
+
+/* ===================================================
+    Responsive
+==================================================== */
+
+@media (min-width: 640px) {
+    :root {
+    
+        /* Font Size */
+        --fs-hero: 4.25rem; /* 68px */
+        --fs-h1: 3.125rem; /* 50px */
+        --fs-h2: 2.375rem; /* 38px */
+        --fs-h3: 1.75rem; /* 28px */
+        --fs-h4: 1.375rem; /* 22px */
+        --fs-body: 1rem; /* 16px */
+
+        /* Spacings */
+        --spacing-body-padding-inline: 3rem; /* 48 px */
+        --spacing-header-padding-inline: 3rem; /* 48px */
+        --spacing-header-padding-block: 1.25rem; /* 20px */
+        --spacing-footer-padding-inline: 3rem; /* 48 px */
+        --spacing-footer-padding-block: 4rem; /* 64px */
+        --spacing-section-padding-block: 4rem; /* 64px */
+        --spacing-section-gap: 2rem; /* 32px */
+        --spacing-container-gap: 1.25rem; /* 20px */
+        --spacing-card-padding: 1.5rem; /* 24px */
+
+        --spacing-project-container-card-margin-inline: 3rem; /* 48 px */
+        --spacing-project-container-card-padding-inline: 3rem; /* 48 px */
+        --spacing-project-container-card-padding-block: 2rem; /* 48 px */
+        
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+
+        /* Font Size */
+        --fs-hero: 5.5rem; /* 88px */
+        --fs-h1: 4rem; /* 64px */
+        --fs-h2: 3rem; /* 48px */
+        --fs-h3: 2.125rem; /* 34px */
+        --fs-h4: 1.625rem; /* 26px */
+        --fs-body: 1rem; /* 16px */
+
+        /* Spacings */
+        --spacing-body-padding-inline: 6.5rem; /* 104 px */
+        --spacing-header-padding-inline: 4rem; /* 64px */
+        --spacing-header-padding-block: 1.25rem; /* 20px */
+        --spacing-header-gap: 2rem; /* 32 */
+        --spacing-footer-padding-inline: 6.5rem; /* 104 px */
+        --spacing-footer-padding-block: 5rem; /* 80px */
+        --spacing-section-padding-block: 5rem; /* 80px */
+        --spacing-section-gap: 3rem; /* 48px */
+        --spacing-container-gap: 3rem; /* 48px */
+        --spacing-card-padding: 2rem; /* 32px */
+
+        --spacing-project-container-card-margin-inline: 6.5rem; /* 104 px */
+        --spacing-project-container-card-padding-inline: 6.5rem; /* 104 px */
+        --spacing-project-container-card-padding-block: 4rem; /* 104 px */
+
+    }
+
+}

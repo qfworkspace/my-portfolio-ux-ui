@@ -1,0 +1,45 @@
+---
+// src/components/Breadcrumb.astro
+interface Props {
+  parentCategory?: string; // Optional
+  parentUrl?: string;       // Optional
+  currentPage: string;      // Required
+}
+
+const { parentCategory, parentUrl, currentPage } = Astro.props;
+
+// <Breadcrumb />
+---
+
+<nav class="breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb__list">
+        <!-- Level 1: Always Home -->
+        <li class="breadcrumb__item">
+            <a href="/" class="breadcrumb__link">Home</a>
+        </li>
+
+        <!-- Level 2: Rendered ONLY if parentCategory exists -->
+        {parentCategory && parentUrl && (
+            <li class="breadcrumb__item">
+                <a href={parentUrl} class="breadcrumb__link">{parentCategory}</a>
+            </li>
+        )}
+
+        <!-- Final Level: Current Active Page -->
+        <li class="breadcrumb__item breadcrumb__item--active">
+            <span class="breadcrumb__link" aria-current="page">{currentPage}</span>
+        </li>
+    </ol>
+</nav>
+
+<!-- To copy-paste in the "slot" space 
+
+<Breadcrumb 
+currentPage="UX/UI Projects"
+parentCategory="My UX/UI Projects" 
+parentUrl="/my-ux-ui-projects" /> 
+
+In Astro, custom components must be written in PascalCase, not lowercase . 
+Lowercase tags are treated as unknown native HTML tags.
+
+-->

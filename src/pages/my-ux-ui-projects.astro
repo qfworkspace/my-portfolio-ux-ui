@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro'; // 1. Added import
+---
+
+<Layout title="My UX/UI Projects" bodyClass="ux-ui-page" mainClass="ux-ui-page__main">
+
+
+    <Breadcrumb currentPage="UX/UI Projects" />
+
+    <section class="section ux-ui-page__hero-section">
+        <h1>My UX/UI Projects</h1>
+        <div class="ux-ui-page__paragraph-container">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque mollis odio, vel rhoncus tortor pellentesque non. Fusce non tincidunt diam. Donec ullamcorper euismod magna, sit amet tincidunt quam laoreet et.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque mollis odio, vel rhoncus tortor pellentesque non. Fusce non tincidunt diam. Donec ullamcorper euismod magna, sit amet tincidunt quam laoreet et.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque mollis odio, vel rhoncus tortor pellentesque non. Fusce non tincidunt diam. Donec ullamcorper euismod magna, sit amet tincidunt quam laoreet et.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque mollis odio, vel rhoncus tortor pellentesque non. Fusce non tincidunt diam. Donec ullamcorper euismod magna, sit amet tincidunt quam laoreet et.
+            </p>
+        </div>
+        <!-- <a 
+        href="#my-work__nav-container"
+        class="hero-section__nav-arrow-link"
+        aria-label="Scroll to the Next Section">
+            <img 
+            src="/asset/graphics/icons/icon-arrow-down-nav.svg"
+            alt=""
+            class="hero-section__nav-arrow">
+        </a> -->
+    </section>
+
+    <section id="work__nav-container" class="section work__nav-container">
+        <h2 class="work__nav-title">My featured projects</h2>
+        <nav class="work__grid">
+
+            <a 
+            href="/my-ux-ui-projects/people-s-care"
+            class="work__card">
+                <img 
+                src="/asset/images/bg-project-preview.png"
+                alt="Project preview"
+                class="card__preview-picture">
+                <div class="card__content">
+                    <h3 class="card__title">People's Care &ndash; Human-Centric Social Platform</h3>
+                    <div class="card__tag-container">
+                        <div class="tag-container">
+                            <p class="card__tag">Product Design</p>
+                        </div>
+                        <div class="tag-container">
+                            <p class="card__tag">User Psychology</p>
+                        </div>
+                        <div class="tag-container">
+                            <p class="card__tag">Stakeholders</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a
+            href="/my-ux-ui-projects/efs" 
+            class="work__card">
+                <img 
+                src="/asset/images/bg-project-preview.png"
+                alt="Project preview"
+                class="card__preview-picture">
+                <div class="card__content">
+                    <h3 class="card__title">EFS &ndash; Persuasive Design Strategy</h3>
+                    <div class="card__tag-container">
+                        <div class="tag-container">
+                            <p class="card__tag">UX Strategy</p>
+                        </div>
+                        <div class="tag-container">
+                            <p class="card__tag">User Psychology</p>
+                        </div>
+                        <div class="tag-container">
+                            <p class="card__tag">Conversion Funnel</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a 
+            href="/my-ux-ui-projects/couleurs-formations"
+            class="work__card">
+                <img 
+                src="/asset/images/bg-project-preview.png"
+                alt="Project preview"
+                class="card__preview-picture">
+                <div class="card__content">
+                    <h3 class="card__title">Couleurs Formations</h3>
+                    <div class="card__tag-container">
+                        <div class="tag-container">
+                            <p class="card__tag">Tag1</p>
+                        </div>
+                        <div class="tag-container">
+                            <p class="card__tag">Tag2</p>
+                        </div>
+                        <div class="tag-container">
+                            <p class="card__tag">Tag3</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </nav>
+    </section>
+
+</Layout>

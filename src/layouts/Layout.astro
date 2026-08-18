@@ -1,0 +1,69 @@
+---
+// src/layouts/Layout.astro
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  bodyClass?: string;
+  mainClass?: string;
+  showHeader?: boolean; // <-- 1. Optional Header prop
+  showFooter?: boolean; // <-- 2. Optional Footer prop
+}
+
+const { 
+  title = "Portfolio", 
+  description = "UX/UI Designer",
+  bodyClass = "",       // <-- 2. Vide par défaut
+  mainClass = "",
+  showHeader = true,
+  showFooter = true
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>{title}</title>
+    <meta name="description" content={description}>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    <!-- CSS Sheets (Root-relative paths) -->
+    <link rel="stylesheet" href="/css/1-token.css">
+    <link rel="stylesheet" href="/css/2-global.css">
+    <link rel="stylesheet" href="/css/3-components.css">
+    <link rel="stylesheet" href="/css/4-header-footer.css">
+    <link rel="stylesheet" href="/css/5-layout.css">
+    <link rel="stylesheet" href="/css/6-errors.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/asset/graphics/logos/your-logo.svg">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content="https://my-portfolio-ux-ui.vercel.app/asset/images/bg-nav-card-uxui.png">
+    <meta property="og:url" content="https://my-portfolio-ux-ui.vercel.app">
+</head>
+
+<body class={bodyClass}>
+
+    <!-- Header rendered only if showHeader is true -->
+    {showHeader && <Header />}
+
+    <main id="main-content" class={mainClass}>
+        <slot />
+    </main>
+
+    <!-- Footer rendered only if showFooter is true -->
+    {showFooter && <Footer />}
+
+</body>
+</html>

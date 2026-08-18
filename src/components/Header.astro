@@ -1,0 +1,50 @@
+---
+// src/components/Header.astro
+---
+
+<header class="header">
+        <div class="header__container">
+
+            <!-- Mobile & Tablet Header -->
+            <button type="button" class="header__overlay-opening" aria-label="Open Menu Overlay">
+                <img src="/asset/graphics/logos/logo-neutral-100.svg" alt="" class="header__logo">
+            </button>
+
+            <!-- Mobile, Tablet & Desktop Header -->
+            <nav class="header__nav">
+                <a href="/" class="header__home-link" aria-label="Go to Home Page"><img src="/asset/graphics/logos/logo-neutral-100.svg" alt="" class="nav__logo"></a>
+                <ul class="header__nav-list">
+                    <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="/about" class="nav__link">Who Am I?</a></li>
+                    <li class="nav__item">
+                        <button 
+                        type="button" 
+                        class="nav__link nav__dropdown-trigger" 
+                        aria-expanded="false" 
+                        aria-haspopup="true">
+                        My Work
+                        <img src="/asset/graphics/icons/icon-arrow-dropdown-disabled.svg" 
+                            alt="" aria-hidden="true" 
+                            class="nav__icon--disabled">
+                        <img src="/asset/graphics/icons/icon-arrow-dropdown-abled.svg" 
+                            alt="" aria-hidden="true" 
+                            class="nav__icon--abled">
+                    </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div class="nav__dropdown">
+                            <ul class="dropdown__nav-list">
+                                <li class="dropdown__nav-item"><a href="/my-ux-ui-projects" class="nav__link">My UX/UI Projects</a></li>
+                                <li class="dropdown__nav-item"><a href="/my-3d-project" class="nav__link">My 3D Creations</a></li>
+                                <li class="dropdown__nav-item"><a href="/my-branding-projects" class="nav__link">My Logotypes</a></li>
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    <li class="nav__item"><a href="/my-references" class="nav__link">My References</a></li>
+                    <li class="nav__item"><a href="/contact" class="nav__link">Contact Me</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>

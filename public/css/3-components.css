@@ -1,0 +1,468 @@
+@import "1-tokens.css";
+
+/* Buttons */
+.button {
+    width: fit-content;
+    display: flex;
+    background-color: var(--bg-btn-primary-default);
+    color: var(--fc-btn);
+    padding-inline: var(--spacing-btn-padding-inline);
+    padding-block: var(--spacing-btn-padding-block);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+
+}
+
+.button:hover, .icon-container:hover {
+    background-color: var(--bg-btn-primary-hover);
+    box-shadow: var(--shadow-btn-highlight);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.button--link {
+    width: fit-content;
+    display: flex;
+    text-decoration: underline;
+}
+
+.button--link:hover {
+    color: var(--blue-50);
+}
+
+
+
+/* Icons */
+.icon-container {
+    width: 80px;
+    height: 80px;
+    background-color: var(--bg-btn-primary-default);
+    border-radius: 50%;
+    padding: 20px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-icon {
+    height: 100%;
+    width: auto;
+}
+
+/* Hero Nav Link */
+.hero-section__nav-arrow-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 66px;  /* Comfortable touch target size */
+    height: 66px;
+    padding: 0;   /* No padding to avoid border-box math glitches */
+}
+
+.hero-section__nav-arrow {
+    width: 48px;               /* Set size directly on the image */
+    height: auto;
+    display: block;
+    /* Runs a smooth infinite loop matching Figma's Smart Animate easing */
+    animation: floatArrow 2s ease-in-out infinite;
+}
+
+@keyframes floatArrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px); /* Moves down 8px at mid-point */
+  }
+}
+
+
+
+/* Forms */
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form__title {
+    font-weight: bold;
+    font-family: var(--font-family-paragraph);
+}
+
+.form-placeholder {
+    width: 100%;
+    background-color: #F3F4F6;
+    padding: 10px;
+    border-radius: 16px;
+    border: none;
+    font-family: var(--font-family-paragraph);
+    font-size: var(--fs-body);
+    font-style: italic;
+}
+
+.form-placeholder:focus {
+    outline: 2px solid var(--blue-50, #0066ff);
+    background-color: #ffffff;
+}
+
+
+
+/* Components Sections */
+/* Breadcrumb */
+.breadcrumb {
+    width: fit-content;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding-inline: var(--spacing-header-padding-inline);
+    padding-block: var(--spacing-btn-padding-block);
+    border-radius: 0 117px 117px 0;
+}
+
+.breadcrumb__list {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    color: var(--fc-paragraph-light);
+}
+
+.breadcrumb__item--active .breadcrumb__link {
+    cursor: default;
+    text-decoration: underline;
+}
+
+.breadcrumb__item + .breadcrumb__item::before {                 /* Adds '>' before every item except the first one ('Home') */
+    content: "> ";
+    user-select: none;                  /* Prevents users from accidentally selecting the separator */
+}
+
+
+/* Work card -- FeaturedProjects + WorkCard*/
+.work__nav-container {
+    width: 100%;
+    color: var(--fc-global-light);
+}
+
+.work__grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-container-gap);
+}
+
+.work__card {
+    max-width: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: var(--fc-global-dark);
+    background-color: var(--neutral-50);
+    border-radius: var(--radius-card);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.work__card:hover {
+    text-decoration: none;
+    z-index: 2;
+    box-shadow: 0px 0px 30px rgba(220, 207, 176, 0.5);
+    transform: scale(1.03);
+}
+
+.card__preview-picture {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;              /* Removes default inline whitespace */
+    align-self: stretch;        /* Forces the image to take full card width in flexbox */
+    border-top-left-radius: var(--radius-card);
+    border-top-right-radius: var(--radius-card);
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-card-gap);
+    padding: var(--spacing-card-padding);
+    align-items: flex-start;
+}
+
+.card__title {
+    font-size: var(--fs-body);
+    font-family: var(--font-family-paragraph);
+    text-transform: none;
+}
+
+.card__tag-container {
+    display: flex;
+    gap: 8px;
+}
+
+.tag-container {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--brown-50);
+    padding-inline: 8px;
+
+    font-family: var(--font-family-paragraph);
+}
+
+
+/* Project Tags -- ProjectTags */
+.project-tag-container {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    gap: 4px;
+
+    font-family: var(--font-family-paragraph);
+    font-size: 12px;
+    color: var(--neutral-900);
+}
+
+.project-tag-container--type {
+    background-color: var(--blue-50);
+    padding-inline: 8px;
+    padding-block: 4px;
+}
+
+.project-tag-container--software {
+    background-color: var(--blue-50);
+    padding-inline: 8px;
+    padding-block: 4px;
+}
+
+
+/* Project Table of Contents -- CaseStudyNav */
+.case-study-summary {
+    height: fit-content;
+    width: fit-content;
+    color: var(--neutral-100);
+    background-color: var(--blue-900-transparency-60);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);                 /* Safari support */
+    padding: 4rem;
+    align-items: flex-start;
+}
+
+.case-study-summary__label {
+    width: fit-content;
+    font-family: var(--font-family-heading);
+    text-transform: uppercase;
+    font-size: var(--fs-h3);
+}
+
+
+/* Prototype Navigation -- DeviceMockupViewer */
+.prototype-frame__nav {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    /* Prototype Device Nav */
+    .prototype-frame__nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: var(--radius-btn);
+        padding-block: 4px;
+        padding-inline: 4px;
+    }
+
+    .prototype-nav--mobile {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 10px var(--spacing-btn-padding-inline);
+        display: flex;
+        align-self: center;
+    }
+
+    .prototype-nav--tablet {
+        background-color: var(--blue-50);
+        border-radius: var(--radius-btn);
+        padding: 10px var(--spacing-btn-padding-inline);
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
+    }
+
+}
+
+@media (min-width: 1024px) {
+    /* Prototype Device Nav */
+    .prototype-nav--mobile,
+    .prototype-nav--tablet {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 10px var(--spacing-btn-padding-inline);
+        display: flex;
+        align-self: center;
+    }
+
+    .prototype-nav--desktop {
+        display: initial;
+        background-color: var(--blue-50);
+        border-radius: var(--radius-btn);
+        padding: 10px var(--spacing-btn-padding-inline);
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+}
+
+/* Device Mockup -- DeviceMockupViewer */
+.prototype-frame__title {
+    color: var(--fc-brand);
+}
+
+.device-mockup {
+    position: relative;
+    width: 100%;
+    margin-inline: auto;
+    overflow: hidden;
+
+    /* Force l'accélération matérielle et isole le rendu */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+.device-mockup--mobile {
+    max-width: 340px;
+    aspect-ratio: 402 / 820;
+}
+
+.device-mockup--tablet, 
+.device-mockup--desktop {
+    display: none;
+}
+
+                    /* Correctif spécifique Safari iOS pour l'iframe */
+.mobile-mockup__iframe {
+    position: absolute;
+    top: 2.2%;
+    bottom: 2.2%;
+    left: 4.8%;
+    right: 4.8%;
+    
+                    /* Forcer Safari à verrouiller la taille */
+    width: calc(100% - 9.6%) !important;
+    height: calc(100% - 4.4%) !important;
+    max-width: calc(100% - 9.6%) !important;
+    max-height: calc(100% - 4.4%) !important;
+
+    border: none;
+    border-radius: 40px;
+    background-color: #000;
+    z-index: 1;
+
+                    /* Défilement tactile fluide sous WebKit */
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+}
+
+                    /* Mockup PNG par-dessus */
+.mobile-mockup__frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+    pointer-events: none; /* Laisse passer le touch vers l'iframe */
+}
+
+@media (min-width: 640px) {
+    /* Prototype */
+    .device-mockup--mobile,
+    .device-mockup--desktop, 
+    .prototype-nav--desktop {
+        display: none;
+    }
+
+    .device-mockup--tablet {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 720px;
+        margin-inline: auto;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+
+    .tablet-mockup__frame {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: block;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .tablet-mockup__iframe {
+    position: absolute;
+    top: 7.9%;
+    left: 4.8%;
+    width: 90.4% !important;
+    height: 87% !important;
+
+    border: none;
+    border-radius: 14px;
+    background-color: transparent;
+    z-index: 1;
+
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+}
+
+}
+
+@media (min-width: 1024px) {
+    /* Prototype */
+    .device-mockup--mobile,
+    .device-mockup--tablet {
+        display: none;
+    }
+
+    .device-mockup--desktop {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 1240px;
+        margin-inline: auto;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+
+    /* 2. Châssis MacBook PNG (définit la hauteur auto) */
+    .desktop-mockup__frame {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: block;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    /* 3. Écran Figma sous le châssis MacBook */
+    .desktop-mockup__iframe {
+        position: absolute;
+        top: 5.6%;          /* Descend sous la bordure haute et la webcam */
+        left: 12.7%;        /* Centrage horizontal */
+        width: 74.6% !important;  /* Largeur intérieure de la dalle */
+        height: 83.2% !important; /* Descend jusqu'au bord noir au-dessus du logo MacBook */
+
+        border: none;
+        border-radius: 4px;
+        background-color: transparent;
+        z-index: 1;
+
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+    }
+    
+}

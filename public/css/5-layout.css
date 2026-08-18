@@ -1,0 +1,1254 @@
+@import "1-tokens.css";
+
+/* Mobile */
+/* Home Page */
+.home-page {
+    position: relative; /* This ensures pseudo-elements inside it anchor themselves cleanly relative to the document screen. */
+    min-height: 100vh;
+    min-height: 100dvh; /* Handles dynamic mobile address bars and scroll under the iphone camera */
+}
+
+.home-page::before { /* Create a hardware-accelerated fixed background pseudo-element */
+    content: ""; /* Required for any ::before or ::after pseudo-element. Without this line, the browser simply won't render the element on screen. */
+    position: fixed; /* Pins the background layer directly to the mobile viewport frame so it stays locked in place while the user scrolls through the content. */
+    inset: 0; /* Cover top, right, bottom, left */
+    
+    background-image: url(/asset/images/bg-picture-body.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures image covers full viewport */
+    
+    z-index: -99;            /* Places image behind all content */
+    pointer-events: none;  /* Allows clicks to pass through to elements below */
+}
+
+.home-page__section {
+    min-height: 100vh; 
+    min-height: 100dvh; /* 100dvh handles dynamic mobile browser address bars better than 100vh */
+    background-color: var(--bg-body-default);
+    color: var(--neutral-100);
+}
+
+/* Hero Section */
+.home-page .hero-section {
+    position: relative; /* Keeps video contained */
+    background-color: #0b0c10; /* Color displayed before the poster or video loads */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: var(--spacing-section-padding-block);
+}
+
+.home-page .hero-section__bg-video {
+    position: absolute;
+    inset: 0;                   /* Shortcut for top: 0, left: 0, right: 0, bottom: 0 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* Same as background-size: cover */
+    object-position: center;   /* Same as background-position: center */
+    z-index: 0;                 /* Background layer */
+    pointer-events: none;
+    background-color: #0b0c10; /* Solid color layer */
+}
+
+.home-page .hero-section__text-container {
+    text-align: center;
+    color: var(--fc-paragraph-light);
+    position: relative;
+}
+
+.home-page .hero-section__nav-arrow-link {
+    position: absolute;
+    bottom: var(--spacing-section-padding-block, 2rem); /* Pins to the bottom padding edge */
+    left: 50%;
+    transform: translateX(-50%); /* Centers horizontally */
+}
+
+
+/* Quote Section */
+.home__quote {
+    max-width: 90rem;
+    height: fit-content;
+    margin-inline: auto;
+
+
+    padding-inline: var(--spacing-body-padding-inline);
+    padding-block: 108px;
+    background-color: var(--bg-body-default);
+    color: var(--neutral-100);
+
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-section-gap);
+    text-align: center;
+}
+
+/* Quiz Carousel Section */
+
+.ice-breaking {
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ice-breaking__container {
+    width: fit-content;
+    height: fit-content;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    background: var(--blue-900-transparency-60);
+    border-radius: var(--radius-card);
+    padding: 42px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-section-gap);
+}
+
+.ice-breaking__subtitle {
+    text-align: center;
+}
+
+.quiz-carousel-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-container-gap);
+}
+
+.quiz-slide {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.quiz-slide--inactive {
+    display: none;
+}
+
+.quiz-option {
+    max-width: 40.625rem ; /* 650px */
+    height: fit-content;
+    background-color: var(--neutral-50);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-card-gap);
+    padding: 20px;
+    text-align: start;
+}
+
+.badge {
+    display: none;
+}
+
+.question-indicator {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--blue-900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevents the circle from squishing when text is long */
+}
+
+
+.carousel-page-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.carousel-page-indicator__progress {
+    background-color: white;
+    width: 47px;
+    height: 4px;
+}
+
+.carousel-page-indicator__progress--active {
+    background-color: var(--blue-50);
+}
+
+/* About Section */
+.home-about__wrapper {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    background-color: #2b3348; 
+    border-radius: 4px;
+    gap: var(--spacing-section-gap);
+
+    border: 2px solid #ffffff;
+    box-shadow: 
+    0 0 8px rgba(153, 182, 255, 0.8),
+    0 0 20px rgba(153, 182, 255, 0.4);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-section-padding-block);
+}
+
+
+.home-about__profile-picture {
+    width: 164px;
+    height: 164px;
+    border-radius: 50%;
+    border: 2px solid var(--blue-50);
+    flex-shrink: 0;
+}
+
+
+/* Refecences Section */
+.home-reference {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--blue-900-transparency-60);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px); /* Safari support */
+}
+
+.home-reference__profile-picture-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-reference__profile-picture {
+    width: 114px;
+    height: 114px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+    filter: brightness(0.55);
+}
+
+.home-reference__profile-picture--highlight {
+    width: 164px;
+    height: 164px;
+    position: relative; /* Required for z-index layering */
+    z-index: 2;
+    margin-left: -38px;
+    margin-right: -38px;
+    filter: brightness(1);
+    box-shadow: 0px 0px 20px rgba(15, 19, 26, 0.8);
+}
+
+.home-reference__quote-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-container-gap);
+
+}
+
+.home-reference__quote {
+    text-align: center;
+}
+
+
+/* Home Nav Section */
+.home-nav {
+    background-color: var(--blue-900-transparency-60);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px); /* Safari support */
+}
+
+.home-nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--container-container-gap, 24px); /* Variable + default to 24px */
+    width: 100%;
+}
+
+.home-nav__item {
+    width: 220px;
+    height: 220px;
+    border-radius: var(--radius-card);
+    background-size: 102% 102%; 
+    box-shadow: 0px 0px 35px rgba(44, 52, 75, 0.9);
+
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.home-nav__item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    transition: all 300ms cubic-bezier(0, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.home-nav__item:hover::before {
+    background-color: rgba(44, 52, 75, 0.65);
+}
+
+.home-nav__projects {
+    background-image: url(/asset/images/bg-nav-card-uxui.png);
+}
+
+.home-nav__creations {
+    background-image: url(/asset/images/bg-nav-card-3d.png);
+}
+
+.home-nav__logo {
+    background-image: url(/asset/images/bg-nav-card-logo.png);
+}
+
+.home-nav__link {
+    position: relative; /* Sits text above the overlay */
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms cubic-bezier(0, 0, 0.2, 1);
+    text-align: center;
+}
+
+.home-nav__link:hover {
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+/* Home Contact Section */
+.home-contact {
+    background-image: url(/asset/images/bg-picture-contact.png);
+    background-position: center;
+    justify-content: center;
+}
+
+
+/* ===================================================
+    Home Page Responsive
+==================================================== */
+/* Home Page Tablet */
+@media (min-width: 640px) {
+    /* Header Same as Mobile */
+
+    .ice-breaking__container {
+    padding: 64px 72px;
+    }
+
+}
+
+/* Home Page Desktop */
+@media (min-width: 1024px) {
+
+    /* Ice Breaking Section */
+    .ice-breaking__container {
+        padding: 64px 128px;
+    }
+
+    .home-nav__list {
+        display: grid;
+        grid-template-columns: repeat(3, 220px);
+        gap: 68px;
+        width: fit-content;
+        margin-inline: auto;
+    }
+
+}
+
+
+/* Contact Page */
+.contact-page__body {
+    padding: 55px 0px;
+}
+.contact-page__form {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 100px 0 0 0;
+    color: var(--fc-global-dark);
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.return-link {
+    align-self: flex-end;
+}
+
+.contact-page__text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-page__nav {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-container-gap);
+    background-color: var(--neutral-50-transparency-70);
+    padding-right: var(--spacing-btn-padding-inline);
+    border-radius: var(--radius-btn);
+}
+
+            /* Contact Page Form */
+.contact-page__form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-page__nav-button--active {
+    background-color: var(--blue-50);
+    width: fit-content;
+    padding: var(--spacing-btn-padding-block) var(--spacing-btn-padding-inline);
+    border-radius: var(--radius-btn);
+}
+
+.contact-page__form-group {
+    width: 100%;
+    background-color: var(--neutral-50);
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+    border-radius: var(--radius-card);
+    padding: var(--spacing-card-padding);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-container-gap);
+}
+
+/* Form container, title and placeholder in components.css */
+
+.contact-page__form-container--interactif .form-placeholder {
+    font-style: normal;
+    cursor: pointer;
+}
+
+.contact-page__form-group--inactive {
+    display: none;
+}
+
+.form-group--active__button {
+    align-self: center;
+}
+
+            /* Contact Page Aside */
+.contact-page__aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--fc-paragraph-light);
+    gap: var(--spacing-container-gap);
+}
+
+.contact-page__logo {
+    width: 152px;
+}
+
+
+
+/* ===================================================
+    Contact Page Responsive
+==================================================== */
+
+/* Contact Page Desktop */
+@media (min-width: 1024px) {
+    .contact-page__body {
+        padding: 0;
+    }
+
+    .contact-page__main {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .contact-page__aside {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .contact-page__side-text {
+        text-wrap: nowrap;
+    }
+}
+
+
+
+/* UX/UI Page */
+.ux-ui-page, .logo-page {
+    background-image: url(/asset/images/bg-ux-ui.png);
+    background-repeat: no-repeat;
+}
+
+.ux-ui-page__main, .logo-page__main, .projects-3d-page__main {
+    padding-top: var(--spacing-project-page-padding-top);
+}
+
+.ux-ui-page__hero-section, .logo-page__hero-section, .projects-3d-page__hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: var(--fc-global-light);
+}
+
+.ux-ui-page__paragraph-container, .logo-page__paragraph-container, .projects-3d-page__paragraph-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-container-gap);
+}
+
+.card__tag-container {
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card__tag {
+    font-size: 12px;
+}
+
+
+
+/* 3D Projects Page */
+.projects-3d-page {
+    position: relative; /* Establishes a positioning context for pseudo-elements and children */
+    min-height: 100dvh; /* Ensures full viewport height coverage on modern mobile browsers */
+}
+
+.projects-3d-page::before {
+    content: ""; /* Mandatory for pseudo-elements to render */
+    position: fixed; /* Locks the background layer to the viewport frame, fixing the mobile zoom issue */
+    inset: 0; /* Shorthand to stretch the element to top: 0, right: 0, bottom: 0, left: 0 */
+    width: 100%;
+    height: 100%;
+    
+    background-image: url(/asset/images/bg-3d-project.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Accurately scales to screen dimensions without distorting on scroll */
+    
+    z-index: -1; /* Keeps the background image positioned behind all page content */
+    pointer-events: none; /* Allows user clicks and touch gestures to pass straight through */
+    transform: translateZ(0); /* Triggers GPU hardware acceleration for smooth scrolling */
+}
+
+.project-case-study {
+    padding-block: var(--spacing-section-padding-block);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-section-gap);
+}
+
+.projects-3d-page .hero-section__text-container {
+    background-color: var(--blue-900-transparency-60);
+    padding: 3.5rem;
+    border-radius: var(--radius-card);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); /* Safari support */
+}
+
+.projects-3d-page__title {
+    color: var(--neutral-100);
+}
+
+.project-case-study__grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-section-gap);
+}
+
+.case-study-block {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    background-color: var(--blue-900-transparency-60);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);                 /* Safari support */
+    
+    color: var(--fc-global-light);
+    
+    padding-inline: var(--spacing-project-container-card-padding-inline);
+    padding-block: var(--spacing-project-container-card-padding-block); /* 90px */
+    gap: 1rem;
+}
+
+.case-study-block--overview {
+    align-self: center;
+    margin-inline: var(--spacing-project-container-card-margin-inline);
+    text-align: left;
+
+    width: calc(100% - (var(--spacing-project-container-card-margin-inline) * 2));
+
+    gap: var(--spacing-container-gap);
+}
+
+.case-study-meta {
+    gap: var(--spacing-container-gap);
+    display: flex;
+    flex-direction: column;
+}
+
+.case-study-item {
+    list-style: disc;
+    margin-left: 2rem;
+}
+
+.case-study--right-indent {
+    margin-left: var(--spacing-project-container-card-margin-inline);
+    align-self: flex-end;
+    border-radius: var(--radius-card) 0 0 var(--radius-card);
+}
+
+.case-study--left-indent {
+    margin-right: var(--spacing-project-container-card-margin-inline);
+    align-self: flex-start;
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+}
+
+.case-study--center-indent {
+    margin-inline: var(--spacing-project-container-card-margin-inline);
+    align-self: center;
+    border-radius: var(--radius-card);
+}
+
+                    /* 3D Projects Gallery */
+.projects-3d-page__gallery {
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item {
+    width: 100%;
+    height: fit-content;
+}
+
+.gallery-item__img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+@media (min-width: 680px) {
+    /* Parent: 6 equal tracks */
+.projects-3d-page__gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+}
+
+/* Picture 1: Full width (100%) */
+.gallery-item1 {
+    grid-column: span 6;
+}
+
+/* Pictures 2, 3, 4: One-third width each (~33%) */
+.gallery-item2,
+.gallery-item3,
+.gallery-item4 {
+    grid-column: span 2;
+}
+
+/* Pictures 5, 6, 7: Half width each (50%) */
+.gallery-item5,
+.gallery-item6,
+.gallery-item7,
+.gallery-item8 {
+    grid-column: span 3;
+}
+    
+}
+
+
+/* EFS Project Page */
+.efs-page {
+    position: relative; /* Establishes a positioning context for pseudo-elements and children */
+    min-height: 100dvh; /* Ensures full viewport height coverage on modern mobile browsers */
+}
+
+.efs-page::before {
+    content: ""; /* Mandatory for pseudo-elements to render */
+    position: fixed; /* Locks the background layer to the viewport frame, fixing the mobile zoom issue */
+    inset: 0; /* Shorthand to stretch the element to top: 0, right: 0, bottom: 0, left: 0 */
+    width: 100%;
+    height: 100%;
+    
+    background-image: url(/asset/images/bg-efs.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Accurately scales to screen dimensions without distorting on scroll */
+    
+    z-index: -1; /* Keeps the background image positioned behind all page content */
+    pointer-events: none; /* Allows user clicks and touch gestures to pass straight through */
+    transform: translateZ(0); /* Triggers GPU hardware acceleration for smooth scrolling */
+}
+
+.efs-page__main {
+    padding-top: var(--spacing-project-page-padding-top);
+}
+
+.efs-page .hero-section {
+    padding-block: var(--spacing-section-padding-block);
+    color: var(--blue-900);
+    
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--spacing-section-gap);
+}
+
+.efs-page .hero-section__text-container {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--neutral-50-transparency-70);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);                 /* Safari support */
+    
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+    padding-inline: var(--spacing-project-container-card-padding-inline);
+    padding-block: var(--spacing-project-container-card-padding-block);
+    gap: var(--spacing-section-gap);
+    margin-right: 48px;
+}
+
+.text-container__description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-container-gap);
+}
+
+.efs-page .case-study-block {
+    border-radius: var(--radius-card);
+    background-color: var(--neutral-50-transparency-70);
+    color: var(--blue-900);
+}
+
+.prototype-frame__nav {
+    display: none;
+}
+
+
+@media (min-width: 640px) {
+    /* EFS Project Page */
+    /* Prototype Device Nav */
+    .prototype-frame__nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: var(--radius-btn);
+        padding-block: 4px;
+        padding-inline: 4px;
+    }
+
+    .prototype-nav--mobile {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 10px var(--spacing-btn-padding-inline);
+        display: flex;
+        align-self: center;
+    }
+
+    .prototype-nav--tablet {
+        background-color: var(--blue-50);
+        border-radius: var(--radius-btn);
+        padding: 10px var(--spacing-btn-padding-inline);
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
+    }
+
+}
+
+@media (min-width: 1024px) {
+    /* Prototype Device Nav */
+    .prototype-nav--mobile,
+    .prototype-nav--tablet {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 10px var(--spacing-btn-padding-inline);
+        display: flex;
+        align-self: center;
+    }
+
+    .prototype-nav--desktop {
+        display: initial;
+        background-color: var(--blue-50);
+        border-radius: var(--radius-btn);
+        padding: 10px var(--spacing-btn-padding-inline);
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+}
+
+
+/* People's Care Project Page */
+.people-page {
+    position: relative; /* Establishes a positioning context for pseudo-elements and children */
+    min-height: 100dvh; /* Ensures full viewport height coverage on modern mobile browsers */
+}
+
+.people-page::before {
+    content: ""; /* Mandatory for pseudo-elements to render */
+    position: fixed; /* Locks the background layer to the viewport frame, fixing the mobile zoom issue */
+    inset: 0; /* Shorthand to stretch the element to top: 0, right: 0, bottom: 0, left: 0 */
+    width: 100%;
+    height: 100%;
+    
+    background-image: url(/asset/images/bg-people.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Accurately scales to screen dimensions without distorting on scroll */
+    
+    z-index: -1; /* Keeps the background image positioned behind all page content */
+    pointer-events: none; /* Allows user clicks and touch gestures to pass straight through */
+    transform: translateZ(0); /* Triggers GPU hardware acceleration for smooth scrolling */
+}
+
+.people-page__main {
+    padding-top: var(--spacing-project-page-padding-top);
+}
+
+.people-page .hero-section {
+    padding-block: var(--spacing-section-padding-block);
+    color: var(--blue-900);
+    
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--spacing-section-gap);
+}
+
+.people-page .hero-section__text-container {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--neutral-50-transparency-70);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);                 /* Safari support */
+    
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+    padding-inline: var(--spacing-project-container-card-padding-inline);
+    padding-block: var(--spacing-project-container-card-padding-block);
+    gap: var(--spacing-section-gap);
+    margin-right: 48px;
+}
+
+.text-container__description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-container-gap);
+}
+
+.people-page .case-study-block {
+    border-radius: var(--radius-card);
+    background-color: var(--neutral-50-transparency-70);
+    color: var(--blue-900);
+}
+
+/* Prototype Device Nav */
+.prototype-nav--mobile {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 10px var(--spacing-btn-padding-inline);
+    display: flex;
+    align-self: center;
+    cursor:auto;
+}
+
+/* Mockup Device Mockup -- DeviceMockupViewer (personalized) */
+.people-page .device-mockup {
+    position: relative;
+    width: 100%;
+    margin-inline: auto;
+    overflow: hidden;
+
+    /* Force l'accélération matérielle et isole le rendu */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+.people-page .device-mockup--mobile {
+    display: block;
+    max-width: 300px;
+    aspect-ratio: 402 / 820;
+}
+
+                    /* Correctif spécifique Safari iOS pour l'iframe */
+.mobile-mockup__iframe {
+    position: absolute;
+    top: 2.2%;
+    bottom: 2.2%;
+    left: 4.8%;
+    right: 4.8%;
+    
+                    /* Forcer Safari à verrouiller la taille */
+    width: calc(100% - 9.6%) !important;
+    height: calc(100% - 4.4%) !important;
+    max-width: calc(100% - 9.6%) !important;
+    max-height: calc(100% - 4.4%) !important;
+
+    border: none;
+    border-radius: 40px;
+    background-color: #000;
+    z-index: 1;
+
+                    /* Défilement tactile fluide sous WebKit */
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+}
+
+                    /* Mockup PNG par-dessus */
+.mobile-mockup__frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+    pointer-events: none; /* Laisse passer le touch vers l'iframe */
+}
+
+
+/* Couleurs Formations Project Page */
+.couleurs-page {
+    position: relative; /* Establishes a positioning context for pseudo-elements and children */
+    min-height: 100dvh; /* Ensures full viewport height coverage on modern mobile browsers */
+}
+
+.couleurs-page::before {
+    content: ""; /* Mandatory for pseudo-elements to render */
+    position: fixed; /* Locks the background layer to the viewport frame, fixing the mobile zoom issue */
+    inset: 0; /* Shorthand to stretch the element to top: 0, right: 0, bottom: 0, left: 0 */
+    width: 100%;
+    height: 100%;
+    
+    background-image: url(/asset/images/bg-couleurs.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Accurately scales to screen dimensions without distorting on scroll */
+    
+    z-index: -1; /* Keeps the background image positioned behind all page content */
+    pointer-events: none; /* Allows user clicks and touch gestures to pass straight through */
+    transform: translateZ(0); /* Triggers GPU hardware acceleration for smooth scrolling */
+}
+
+.couleurs-page__main {
+    padding-top: var(--spacing-project-page-padding-top);
+}
+
+.couleurs-page .hero-section {
+    padding-block: var(--spacing-section-padding-block);
+    color: var(--blue-900);
+    
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--spacing-section-gap);
+}
+
+.couleurs-page .hero-section__text-container {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--neutral-50-transparency-70);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);                 /* Safari support */
+    
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+    padding-inline: var(--spacing-project-container-card-padding-inline);
+    padding-block: var(--spacing-project-container-card-padding-block);
+    gap: var(--spacing-section-gap);
+    margin-right: 48px;
+}
+
+.text-container__description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-container-gap);
+}
+
+.couleurs-page .case-study-block {
+    border-radius: var(--radius-card);
+    background-color: var(--neutral-50-transparency-70);
+    color: var(--blue-900);
+}
+
+.prototype-frame__nav {
+    display: none;
+}
+
+
+@media (min-width: 640px) {
+    /* EFS Project Page */
+    /* Prototype Device Nav */
+    .prototype-frame__nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: var(--radius-btn);
+        padding-block: 4px;
+        padding-inline: 4px;
+    }
+
+    .prototype-nav--mobile {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 10px var(--spacing-btn-padding-inline);
+        display: flex;
+        align-self: center;
+    }
+
+    .prototype-nav--tablet {
+        background-color: var(--blue-50);
+        border-radius: var(--radius-btn);
+        padding: 10px var(--spacing-btn-padding-inline);
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
+    }
+
+}
+
+@media (min-width: 1024px) {
+    /* Prototype Device Nav */
+    .prototype-nav--mobile,
+    .prototype-nav--tablet {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 10px var(--spacing-btn-padding-inline);
+        display: flex;
+        align-self: center;
+    }
+
+    .prototype-nav--desktop {
+        display: initial;
+        background-color: var(--blue-50);
+        border-radius: var(--radius-btn);
+        padding: 10px var(--spacing-btn-padding-inline);
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+}
+
+
+/* Sirmé */
+.sirme-page {
+    position: relative; /* Establishes a positioning context for pseudo-elements and children */
+    min-height: 100dvh; /* Ensures full viewport height coverage on modern mobile browsers */
+}
+
+.sirme-page::before {
+    content: ""; /* Mandatory for pseudo-elements to render */
+    position: fixed; /* Locks the background layer to the viewport frame, fixing the mobile zoom issue */
+    inset: 0; /* Shorthand to stretch the element to top: 0, right: 0, bottom: 0, left: 0 */
+    width: 100%;
+    height: 100%;
+    
+    background-image: url(/asset/images/bg-sirme.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Accurately scales to screen dimensions without distorting on scroll */
+    
+    z-index: -1; /* Keeps the background image positioned behind all page content */
+    pointer-events: none; /* Allows user clicks and touch gestures to pass straight through */
+    transform: translateZ(0); /* Triggers GPU hardware acceleration for smooth scrolling */
+}
+
+.sirme-page__main {
+    padding-top: var(--spacing-project-page-padding-top);
+}
+
+.hero-section__title, .text-container__title {
+    color: rgba(48, 25, 15, 1);
+}
+
+.sirme-page .project-tag-container--type, .project-tag-container--software {
+    background-color: rgba(254, 231, 167, 1);
+    color: rgba(48, 25, 15, 1);
+}
+
+.sirme-page .hero-section {
+    padding-block: var(--spacing-section-padding-block);
+    
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--spacing-section-gap);
+}
+
+.sirme-page .hero-section__text-container {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--neutral-50-transparency-70);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);                 /* Safari support */
+    
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+    padding-inline: var(--spacing-project-container-card-padding-inline);
+    padding-block: var(--spacing-project-container-card-padding-block);
+    gap: var(--spacing-section-gap);
+    margin-right: 48px;
+}
+
+.text-container__description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-container-gap);
+}
+
+.people-page .case-study-block {
+    border-radius: var(--radius-card);
+    background-color: var(--neutral-50-transparency-70);
+    color: var(--blue-900);
+}
+
+
+/* Sirmé Page */
+.graphic-charter-breakdown {
+    background-color: var(--neutral-100);
+}
+
+.sirme-img {
+    width: 100%;
+    height: 100%;
+    max-height: inherit;
+    object-fit: contain; /* L'image rétrécit pour tenir entièrement dans la div sans déformation */
+    display: block;
+}
+
+.symbol-sirme-spacing {
+    width: 80%;
+    height: 80%;
+}
+
+.graphic-charter-logos-spacing {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-container-gap);
+}
+
+.graphic-charter-description {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-container-gap);
+}
+
+p.graphic-charter-description__text {
+    max-width: none;
+    width: 100%;
+}
+
+.sirme-page .section-header-container {
+    color: var(--fc-global-light);
+}
+
+.mockup-description__subtitle {
+    font-style: italic;
+}
+
+.see-more__title {
+    color: var(--fc-global-light);
+}
+
+.sirme-see-more__section .icon-container {
+    background-color: #FEE7A7;
+}
+
+.graphic-charter-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.graphic-charter-logos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 640px) {
+    .graphic-charter-logos-spacing {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .logo-sirme-spacing {
+        flex: 0 0 57.5%;
+        max-width: 57.5%;
+        height: auto;
+    }
+
+    .symbol-sirme-spacing {
+        flex: 0 0 37.19%;
+        max-width: 37.19%;
+        height: auto;
+    }
+
+    .mockup-banner {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .mockup-banner__image {
+        flex: 1 1 0; /* flex: [grow] grandir pour occuper l'espace restant dans la ligne [shrink] rétrécir si l'écran ou le conteneur devient trop petit [basis] taille de départ */
+        min-width: 0; /* INDISPENSABLE : autorise l'image à rétrécir */
+        height: auto;
+    }
+
+    .mockup-signature__image {
+        max-width: 960px;
+        height: auto;
+        justify-self: center;
+    }
+
+    .graphic-charter-mockups {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .graphic-charter-page {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: var(--spacing-container-gap);
+    }
+
+    .graphic-charter-mockups {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+}

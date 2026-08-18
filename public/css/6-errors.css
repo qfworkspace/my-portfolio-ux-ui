@@ -1,0 +1,97 @@
+/* Under Construction Page */
+.wip-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at center, var(--blue-500) 0%, var(--blue-900) 100%);
+    color: var(--fc-global-light);
+    font-family: var(--font-family-paragraph);
+}
+
+.wip-page__main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 138px;
+    padding-inline: var(--spacing-body-padding-inline);
+    padding-block: var(--spacing-section-padding-block);
+}
+
+.wip-page__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 550px;
+    gap: 1.5rem;
+}
+
+/* Star divider with horizontal side lines */
+.wip-page__divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    color: var(--neutral-50-transparency-70);
+}
+
+.wip-page__divider::before,
+.wip-page__divider::after {
+    content: "";
+    flex: 1;
+    max-width: 90px;
+    height: 1px;
+    background-color: var(--neutral-50-transparency-50);
+}
+
+.wip-page__star {
+    font-size: 0.85rem;
+    line-height: 1;
+}
+
+/* Heading */
+.wip-page__title {
+    font-family: var(--font-family-heading);
+    font-size: clamp(2.5rem, 6vw, var(--fs-hero));
+    line-height: var(--lh-heading);
+    letter-spacing: var(--ls-heading);
+    text-transform: uppercase;
+    color: var(--fc-heading-light);
+    margin: 0;
+}
+
+/* Description */
+.wip-page__description {
+    font-size: var(--fs-body);
+    line-height: var(--lh-paragraph);
+    color: var(--fc-paragraph-light);
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Call to action button */
+.wip-page__cta {
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: var(--spacing-btn-padding-inline);
+    padding-block: var(--spacing-btn-padding-block);
+    border-radius: var(--radius-btn);
+    background-color: var(--bg-btn-primary-default);
+    color: var(--fc-btn);
+    font-size: var(--fs-body);
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: var(--shadow-btn-default);
+    transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.wip-page__cta:hover {
+    background-color: var(--bg-btn-primary-hover);
+    box-shadow: var(--shadow-btn-highlight);
+    transform: translateY(-2px);
+    text-decoration: none;
+}

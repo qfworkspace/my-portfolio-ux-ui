@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="My Branding Projects">
+
+    <div class="logo-page">
+
+        <div class="logo-page__main">
+
+            <nav class="breadcrumb"
+            aria-label="breadcrumb">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a href="/"
+                        class="breadcrumb__link">
+                        Home
+                        </a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--active">
+                        <span
+                        class="breadcrumb__link"
+                        aria-current="page"> <!-- aria-current is an accessibility attribute defined by WAI-ARIA that informs screen readers and assistive technologies that an element represents the currently active page within a set of navigation links -->
+                        My Branding Projects   
+                        </span> 
+                    </li>
+                </ol>
+            </nav>
+
+            <section class="section logo-page__hero-section">
+                <h1>My Branding Projects</h1>
+                <div class="logo-page__paragraph-container">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque mollis odio, vel rhoncus tortor pellentesque non. Fusce non tincidunt diam. Donec ullamcorper euismod magna, sit amet tincidunt quam laoreet et.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque mollis odio, vel rhoncus tortor pellentesque non. Fusce non tincidunt diam. Donec ullamcorper euismod magna, sit amet tincidunt quam laoreet et.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque mollis odio, vel rhoncus tortor pellentesque non. Fusce non tincidunt diam. Donec ullamcorper euismod magna, sit amet tincidunt quam laoreet et.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque mollis odio, vel rhoncus tortor pellentesque non. Fusce non tincidunt diam. Donec ullamcorper euismod magna, sit amet tincidunt quam laoreet et.
+                    </p>
+                </div>
+                <!-- <a 
+                href="#my-work__nav-container"
+                class="hero-section__nav-arrow-link"
+                aria-label="Scroll to the Next Section">
+                    <img 
+                    src="/asset/graphics/icons/icon-arrow-down-nav.svg"
+                    alt=""
+                    class="hero-section__nav-arrow">
+                </a> -->
+            </section>
+
+            <section id="work__nav-container" class="section work__nav-container">
+                <h2 class="work__nav-title">My featured projects</h2>
+                <nav class="work__grid">
+
+                    <a 
+                    href="/my-branding-projects/dearest-noor"
+                    class="work__card">
+                        <img 
+                        src="/asset/images/bg-project-preview.png"
+                        alt="Project preview"
+                        class="card__preview-picture">
+                        <div class="card__content">
+                            <h3 class="card__title">Dearest Noor</h3>
+                            <div class="card__tag-container">
+                                <div class="tag-container">
+                                    <p class="card__tag">Tag1</p>
+                                </div>
+                                <div class="tag-container">
+                                    <p class="card__tag">Tag2</p>
+                                </div>
+                                <div class="tag-container">
+                                    <p class="card__tag">Tag3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a
+                    href="/my-branding-projects/arq" 
+                    class="work__card">
+                        <img 
+                        src="/asset/images/bg-project-preview.png"
+                        alt="Project preview"
+                        class="card__preview-picture">
+                        <div class="card__content">
+                            <h3 class="card__title">ARQ</h3>
+                            <div class="card__tag-container">
+                                <div class="tag-container">
+                                    <p class="card__tag">Tag1</p>
+                                </div>
+                                <div class="tag-container">
+                                    <p class="card__tag">Tag2</p>
+                                </div>
+                                <div class="tag-container">
+                                    <p class="card__tag">Tag3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a 
+                    href="/my-branding-projects/sirme"
+                    class="work__card">
+                        <img 
+                        src="/asset/images/bg-project-preview.png"
+                        alt="Project preview"
+                        class="card__preview-picture">
+                        <div class="card__content">
+                            <h3 class="card__title">Sirmé</h3>
+                            <div class="card__tag-container">
+                                <div class="tag-container">
+                                    <p class="card__tag">Tag1</p>
+                                </div>
+                                <div class="tag-container">
+                                    <p class="card__tag">Tag2</p>
+                                </div>
+                                <div class="tag-container">
+                                    <p class="card__tag">Tag3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </nav>
+            </section>
+        </div>
+    </div>
+</Layout>

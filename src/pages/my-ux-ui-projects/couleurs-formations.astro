@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro'; // 1. Added import
+import ProjectTags from '../../components/ProjectTags.astro';
+import DeviceMockupViewer from '../../components/DeviceMockupViewer.astro';
+import FeaturedProjects from '../../components/FeaturedProjects.astro';
+---
+
+<Layout 
+title="Couleurs Formations Project" 
+bodyClass="couleurs-page" 
+mainClass="couleurs-page__main">
+
+    <Breadcrumb 
+    currentPage="Couleurs Formations"
+    parentCategory="My UX/UI Projects" 
+    parentUrl="/my-ux-ui-projects" />
+    
+    <section class="hero-section">
+        <h1 class="hero-section__title">Couleurs Formations &ndash;<br/> Lorem ipsum</h1>
+        <ProjectTags />
+        <div class="hero-section__text-container">
+            <h2 class="text-container__title">Context</h2>
+            <div class="text-container__description">
+                <p class="text-justify hero-section__subtitle">
+                    <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
+                </p>
+                <p class="text-justify hero-section__description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <DeviceMockupViewer
+        projectTitle="EFS"
+        desktopUrl="https://embed.figma.com/proto/HuLTLNufrGkp0UhFDemfmr/proto-portfolio?node-id=2-10&scaling=scale-down-width&content-scaling=fixed&page-id=2%3A9&hide-ui=1&embed-host=share"
+        tabletUrl="https://embed.figma.com/proto/HuLTLNufrGkp0UhFDemfmr/proto-portfolio?node-id=2-7&scaling=scale-down-width&content-scaling=fixed&page-id=2%3A6&hide-ui=1&embed-host=share"
+        mobileUrl="https://embed.figma.com/proto/fUa2FeIial7In3k0VKjDSn/Charity-platform?node-id=37-341&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=37%3A341&page-id=34%3A2&hide-ui=1&embed-host=share"
+    />
+
+    <section class="section project-breakdown">
+        <div class="case-study-block">
+            <h3 class="case-study-block__title">Analysis</h3>
+            <p class="text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+            </p>
+            <p class="text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+            </p>
+            <p class="text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+            </p>
+        </div>
+    </section>
+
+    <FeaturedProjects />
+
+</Layout>

@@ -1,0 +1,40 @@
+---
+// src/components/WorkCard.astro
+interface Props {
+  href: string;
+  imageSrc: string;
+  imageAlt: string;
+  title: string;
+  tags?: string[];
+}
+
+const { href, imageSrc, imageAlt, title, tags = [] } = Astro.props;
+---
+
+<a href={href} class="work__card">
+    <img src={imageSrc} alt={imageAlt} class="card__preview-picture" />
+    <div class="card__content">
+        <h3 class="card__title">{title}</h3>
+        {tags.length > 0 && (
+            <div class="card__tag-container">
+                {tags.map((tag) => (
+                    <div class="tag-container">
+                        <p class="card__tag">{tag}</p>
+                    </div>
+                ))}
+            </div>
+        )}
+    </div>
+</a>
+
+<!-- To copy-paste in the "slot" space 
+
+<WorkCard 
+  href="/projects/peoples-care" 
+  imageSrc="/asset/images/preview-peoples-care.png" 
+  imageAlt="People's Care preview" 
+  title="People's Care" 
+  tags={["UX Research", "Figma", "Design System"]} 
+/> 
+
+-->

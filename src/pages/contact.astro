@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Me" showHeader={false} showFooter={false}>
+    <div class="contact-page__body">
+    
+    <div class="contact-page__main">
+        <section class="section contact-page__form">
+            <button type="button" onclick="history.back()" class="return-link" aria-label="Close Contact Page and go back">
+                <img src="/asset/graphics/icons/icon-close.svg" alt="" class="contact-page__close-icon" />
+            </button>
+            <div class="contact-page__text-container">
+                <h1 class="contact-page__title">Let&rsquo;s keep in touch</h1>
+                <figure class="contact-page__quote-container">
+                    <blockquote class="contact-page__quote">The greater user experience is the contact.</blockquote>
+                </figure>
+            </div>
+            <nav class="nav-buttons contact-page__nav">
+                <button type="button" class="nav-button contact-page__nav-button contact-page__nav-button--active">You Contact Me</button>
+                <button type="button" class="nav-button contact-page__nav-button">I Contact You</button>
+            </nav>
+
+            <div class="contact-page__form-group contact-page__form-group--active">
+                <div class="contact-page__form-container contact-page__form-container--interactif">
+                    <p class="form__title">First name</p>
+                    <div class="contact-page__input">
+                        <p class="form-placeholder">Click here</p>
+                    </div>
+                </div>
+
+                <div class="contact-page__form-container contact-page__form-container--interactif">
+                    <p class="form__title">Last name</p>
+                    <div class="contact-page__input">
+                        <p class="form-placeholder">Click here</p>
+                    </div>
+                </div>
+
+                <div class="contact-page__form-container contact-page__form-container--interactif">
+                    <p class="form__title">Email</p>
+                    <div class="contact-page__input">
+                        <p class="form-placeholder">Click here</p>
+                    </div>
+                </div>
+
+                <div class="contact-page__form-container contact-page__form-container--interactif">
+                    <p class="form__title">Phone number</p>
+                    <div class="contact-page__input">
+                        <p class="form-placeholder">Click here</p>
+                    </div>
+                </div>
+
+                <button type="button" class="button--link form-group--active__button">Or I contact you</button>
+            </div>
+
+            <form class="contact-page__form-group contact-page__form-group--inactive">
+
+                <div class="form-container contact-page__form-container">
+                    <label for="user-first-name" class="form__title">First name</label>
+                    <input
+                    type="text"
+                    id="user-first-name"
+                    name="user-first-name"
+                    class="form-placeholder form-placeholder--to-fill"
+                    placeholder="Enter your first name"
+                    />
+                </div>
+                
+                <div class="contact-page__form-container">
+                    <label for="user-last-name" class="form__title">Last name</label>
+                    <input
+                    type="text"
+                    id="user-last-name"
+                    name="user-last-name"
+                    class="form-placeholder form-placeholder--to-fill"
+                    placeholder="Enter your last name"
+                    />
+                </div>
+
+                <div class="contact-page__form-container">
+                    <label for="user-email" class="form__title">Email</label>
+                    <input
+                    type="email"
+                    id="user-email"
+                    name="user-email"
+                    class="form-placeholder form-placeholder--to-fill"
+                    placeholder="Enter your email"
+                    />
+                </div>
+
+                <div class="contact-page__form-container">
+                    <label for="user-phone-number" class="form__title">Phone number</label>
+                    <input
+                    type="tel"
+                    id="user-phone-number"
+                    name="user-phone-number"
+                    class="form-placeholder form-placeholder--to-fill"
+                    placeholder="Enter your phone number"
+                    />
+                </div>  
+
+                <div class="contact-page__form-container">
+                    <label for="user-message" class="form__title">Message</label>
+                    <textarea
+                    id="user-message"
+                    name="user-message"
+                    class="form-placeholder form-placeholder--to-fill"
+                    placeholder="Enter your message"
+                    rows="3"
+                    ></textarea>
+                </div>  
+                
+                <button type="submit" class="button form-group__submit-button">Submit</button>
+            </form>
+
+        </section>
+
+        <aside class="section contact-page__aside">
+            <a href="/" class="home-link"><img src="/asset/graphics/logos/logo-neutral-100.svg" alt="My logo" class="contact-page__logo"></a>
+            <p class="contact-page__side-text">Thank you for your interest</p>
+            <a href="https://www.linkedin.com/in/qetsia-fontange/" target="_blank" rel="noopener noreferrer" class="icon-container"><img src="/asset/graphics/icons/icon-linkedin.svg" alt="" class="contact-page__icon"></a>
+        </aside>
+    </div>
+
+    </div>
+</Layout>
