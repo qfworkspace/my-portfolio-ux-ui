@@ -1,35 +1,152 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro'; // 1. Added import
+import ProjectTags from '../../components/ProjectTags.astro';
+import FeaturedProjects from '../../components/FeaturedProjects.astro';
 ---
 
-<Layout title="Project ARQ – Work In Progress" showFooter={false}>
-    <div class="wip-page">
+<Layout 
+title="Dearest Noor Project" 
+bodyClass="noor-page" 
+mainClass="noor-page__main">
 
-        <div class="wip-page__main" id="wip-placeholder">
+    <Breadcrumb 
+    currentPage="Dearest Noor"
+    parentCategory="My Branding Projects" 
+    parentUrl="/my-branding-projects" />
 
-            <section class="section wip-page__content">
-                <!-- Top Star Divider -->
-                <div class="wip-page__divider" aria-hidden="true">
-                    <span class="wip-page__star">★</span>
-                    <span class="wip-page__star">★</span>
-                    <span class="wip-page__star">★</span>
-                </div>
-
-                <!-- Main Heading -->
-                <h1 class="wip-page__title">Work in<br>Progress</h1>
-
-                <!-- Subtitle -->
-                <p class="wip-page__description">
-                    I'm making lots of improvements and will be back soon.
+    <section class="hero-section">
+        <h1 class="hero-section__title">Dearest Noor &ndash;<br/>Lorem ipsum</h1>
+        <ProjectTags />
+        <div class="hero-section__text-container">
+            <h2 class="text-container__title">Context</h2>
+            <div class="text-container__description">
+                <p class="text-justify hero-section__subtitle">
+                    <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
                 </p>
+                <p class="text-justify hero-section-description__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+                </p>
+            </div>
+        </div>
+    </section>
 
-                <!-- Action Link -->
-                <a href="index.html" class="btn btn--primary wip-page__cta">
-                    Back to Home
-                </a>
-            </section>
-
+    <section class="graphic-charter-breakdown">
+        <div class="section graphic-charter-page">
+            <div class="graphic-charter-description">
+                <h3 class="graphic-charter-description__title">The Logotype and the Symbol</h3>
+                <p class="text-justify graphic-charter-description__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+                </p>
+            </div>
+            <div class="graphic-charter-logos-spacing">
+                <img 
+                src="/asset/images/logo-noor-spacing.png" 
+                alt="Dearest Noor Logotype" 
+                class="noor-img logo-noor-spacing"
+                />
+                <img 
+                src="/asset/images/symbol-noor-spacing.png" 
+                alt="Dearest Noor Symbol" 
+                class="noor-img symbol-noor-spacing"
+                />
+            </div>
         </div>
 
-    </div>
+        <div class="section graphic-charter-page">
+            <div class="graphic-charter-colorboard">
+                <img 
+                src="/asset/images/noor-color-board.png" 
+                alt="Dearest Noor Color Board" 
+                class="noor-img noor-color-board"
+                />
+            </div>
+            <div class="graphic-charter-description">
+                <h3 class="graphic-charter-description__title">The Color Board</h3>
+                <p class="text-justify graphic-charter-description__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+                </p>
+            </div>
+        </div>
+
+        <div class="section graphic-charter-page">
+            <div class="graphic-charter-description">
+                <h3 class="graphic-charter-description__title">The Logotype and the Symbol</h3>
+                <p class="text-justify graphic-charter-description__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+                </p>
+            </div>
+            <div class="graphic-charter-logos">
+                <img 
+                src="/asset/images/logo-and-color-noor.png" 
+                alt="Dearest Noor Logotype" 
+                class="noor-img logo-noor-spacing"
+                />
+            </div>
+        </div>
+
+        <div class="section graphic-charter-page">
+            <div class="graphic-charter-description">
+                <h3 class="graphic-charter-description__title">The Pattern</h3>
+                <p class="text-justify graphic-charter-description__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam viverra ante porta volutpat quis non nunc. Cras ac lorem vel ligula consectetur ultrices porta eu elit. Sed et tortor vitae metus egestas pharetra et sit amet felis. Ut porttitor accumsan tempus. Pellentesque vehicula nunc lacus, vel cursus leo fringilla et. Proin sed lorem bibendum orci mollis imperdiet ac sit amet eros. Nam leo nibh, imperdiet eget nisl id, pellentesque sodales nisl. Sed rutrum odio sit amet risus convallis, in volutpat orci bibendum. Vivamus consectetur sem ac est vulputate, sed placerat arcu gravida. Quisque sit amet quam sem. Pellentesque fermentum et ligula at finibus. Morbi non volutpat urna, et commodo nisl. Nunc urna ante, luctus eget vulputate quis, venenatis non tortor.
+                </p>
+            </div>
+            <div class="graphic-charter-logos">
+                <img 
+                src="/asset/images/noor-pattern.png" 
+                alt="Dearest Noor Pattern" 
+                class="noor-img logo-noor-spacing"
+                />
+            </div>
+        </div>
+
+    </section>
+
+    <section class="graphic-charter-mockups">    
+        <div class="section section-header-container">
+            <h2 class="mockup-title">The mockups</h2>
+            <div class="mockup-description">
+                <p class="text-justify mockup-description__subtitle">
+                    Les photographies des éléments suivants ont été générées par intelligence artificielle. L'implémentation des éléments de marque Dearest Noor ont, quant à eux, été réalisés manuellement via Photoshop ou Figma.
+                </p>
+            </div>
+        </div>
+
+        <div class="mockup-signature">
+            <img 
+            src="/asset/images/noor-signature.png" 
+            alt="Dearest Noor Mockup Signature" 
+            class="noor-img mockup-signature__image"
+            />
+        </div>
+
+        <div class="mockup-banner">
+            <img 
+            src="/asset/images/noor-mockup-card.png" 
+            alt="Dearest Noor Mockup Card" 
+            class="noor-img mockup-banner__image"
+            />
+            <img 
+            src="/asset/images/noor-mockup-teacup.png" 
+            alt="Dearest Noor Mockup Teacup" 
+            class="noor-img mockup-banner__image"
+            />
+            <img 
+            src="/asset/images/noor-mockup-totebag.png" 
+            alt="Dearest Noor Mockup Tote Bag" 
+            class="noor-img mockup-banner__image"
+            />
+        </div>
+
+
+    </section>
+
+    <!-- <section class="section noor-see-more__section">
+        <h2 class="see-more__title">See more about Dearest Noor</h2>
+        <a href="https://www.instagram.com/noor_hair/" target="_blank" rel="noopener noreferrer" class="icon-container"><img src="/asset/graphics/icons/icon-instagram.svg" alt="" class="link-icon noor-instagram-icon"></a>
+    </section> -->
+
+    <FeaturedProjects/>
+
 </Layout>

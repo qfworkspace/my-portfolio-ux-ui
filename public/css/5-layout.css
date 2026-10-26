@@ -1125,8 +1125,8 @@
 }
 
 
-/* Sirmé Page */
-.graphic-charter-breakdown {
+/* Sirmé Graphic Charter */
+.sirme-page .graphic-charter-breakdown {
     background-color: var(--neutral-100);
 }
 
@@ -1143,7 +1143,7 @@
     height: 80%;
 }
 
-.graphic-charter-logos-spacing {
+.sirme-page .graphic-charter-logos-spacing {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -1152,14 +1152,14 @@
     gap: var(--spacing-container-gap);
 }
 
-.graphic-charter-description {
+.sirme-page .graphic-charter-description {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: var(--spacing-container-gap);
 }
 
-p.graphic-charter-description__text {
+.sirme-page p.graphic-charter-description__text {
     max-width: none;
     width: 100%;
 }
@@ -1168,11 +1168,11 @@ p.graphic-charter-description__text {
     color: var(--fc-global-light);
 }
 
-.mockup-description__subtitle {
+.sirme-page .mockup-description__subtitle {
     font-style: italic;
 }
 
-.see-more__title {
+.sirme-page .see-more__title {
     color: var(--fc-global-light);
 }
 
@@ -1180,20 +1180,20 @@ p.graphic-charter-description__text {
     background-color: #FEE7A7;
 }
 
-.graphic-charter-page {
+.sirme-page .graphic-charter-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.graphic-charter-logos{
+.sirme-page .graphic-charter-logos{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 @media (min-width: 640px) {
-    .graphic-charter-logos-spacing {
+    .sirme-page .graphic-charter-logos-spacing {
         flex-direction: row;
         width: 100%;
     }
@@ -1210,25 +1210,25 @@ p.graphic-charter-description__text {
         height: auto;
     }
 
-    .mockup-banner {
+    .sirme-page .mockup-banner {
         display: flex;
         flex-direction: row;
         width: 100%;
     }
 
-    .mockup-banner__image {
+    .sirme-page .mockup-banner__image {
         flex: 1 1 0; /* flex: [grow] grandir pour occuper l'espace restant dans la ligne [shrink] rétrécir si l'écran ou le conteneur devient trop petit [basis] taille de départ */
         min-width: 0; /* INDISPENSABLE : autorise l'image à rétrécir */
         height: auto;
     }
 
-    .mockup-signature__image {
+    .sirme-page .mockup-signature__image {
         max-width: 960px;
         height: auto;
         justify-self: center;
     }
 
-    .graphic-charter-mockups {
+    .sirme-page .graphic-charter-mockups {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1238,14 +1238,219 @@ p.graphic-charter-description__text {
 }
 
 @media (min-width: 1024px) {
-    .graphic-charter-page {
+    .sirme-page .graphic-charter-page {
         display: flex;
         flex-direction: row;
         width: 100%;
         gap: var(--spacing-container-gap);
     }
 
-    .graphic-charter-mockups {
+    .sirme-page .graphic-charter-mockups {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+}
+
+
+
+/* ___________________________________________________________ */
+
+/* Dearest Noor Page */
+.noor-page {
+    position: relative; /* Establishes a positioning context for pseudo-elements and children */
+    min-height: 100dvh; /* Ensures full viewport height coverage on modern mobile browsers */
+}
+
+.noor-page::before {
+    content: ""; /* Mandatory for pseudo-elements to render */
+    position: fixed; /* Locks the background layer to the viewport frame, fixing the mobile zoom issue */
+    inset: 0; /* Shorthand to stretch the element to top: 0, right: 0, bottom: 0, left: 0 */
+    width: 100%;
+    height: 100%;
+    
+    background-image: url(/asset/images/bg-noor-nuit.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Accurately scales to screen dimensions without distorting on scroll */
+    
+    z-index: -1; /* Keeps the background image positioned behind all page content */
+    pointer-events: none; /* Allows user clicks and touch gestures to pass straight through */
+    transform: translateZ(0); /* Triggers GPU hardware acceleration for smooth scrolling */
+}
+
+.noor-page__main {
+    padding-top: var(--spacing-project-page-padding-top);
+}
+
+.noor-page .hero-section__title {
+    color: rgba(232, 187, 156, 1);
+}
+
+.noor-page {
+  .project-tag-container--type,
+  .project-tag-container--software {
+    background-color: rgba(160, 168, 222, 1);
+    color: rgba(48, 25, 15, 1);
+  }
+}
+
+.noor-page .hero-section {
+    padding-block: var(--spacing-section-padding-block);
+    
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--spacing-section-gap);
+}
+
+.noor-page .hero-section__text-container {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--neutral-50-transparency-70);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);                 /* Safari support */
+    
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+    padding-inline: var(--spacing-project-container-card-padding-inline);
+    padding-block: var(--spacing-project-container-card-padding-block);
+    gap: var(--spacing-section-gap);
+    margin-right: 48px;
+}
+
+.text-container__description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-container-gap);
+}
+
+
+
+/* Noor Graphic Charter */
+.noor-page .graphic-charter-breakdown {
+    background-color: var(--neutral-100);
+}
+
+.noor-img {
+    width: 100%;
+    height: 100%;
+    max-height: inherit;
+    object-fit: contain; /* L'image rétrécit pour tenir entièrement dans la div sans déformation */
+    display: block;
+}
+
+.symbol-noor-spacing {
+    width: 80%;
+    height: 80%;
+}
+
+.noor-page .graphic-charter-logos-spacing {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-container-gap);
+}
+
+.noor-page .graphic-charter-description {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-container-gap);
+}
+
+.noor-page p.graphic-charter-description__text {
+    max-width: none;
+    width: 100%;
+}
+
+.noor-page .section-header-container {
+    color: var(--fc-global-light);
+}
+
+.noor-page .mockup-description__subtitle {
+    font-style: italic;
+}
+
+.noor-page .see-more__title {
+    color: var(--fc-global-light);
+}
+
+.noor-see-more__section .icon-container {
+    background-color: #FEE7A7;
+}
+
+.noor-page .graphic-charter-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.noor-page .graphic-charter-logos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 640px) {
+    .noor-page .graphic-charter-logos-spacing {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .logo-noor-spacing {
+        flex: 0 0 57.5%;
+        max-width: 70.21%;
+        height: auto;
+    }
+
+    .symbol-noor-spacing {
+        flex: 0 0 37.19%;
+        max-width: 29.79%;
+        height: auto;
+    }
+
+    .noor-page .mockup-banner {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .noor-page .mockup-banner__image {
+        flex: 1 1 0; /* flex: [grow] grandir pour occuper l'espace restant dans la ligne [shrink] rétrécir si l'écran ou le conteneur devient trop petit [basis] taille de départ */
+        min-width: 0; /* INDISPENSABLE : autorise l'image à rétrécir */
+        height: auto;
+    }
+
+    .noor-page .mockup-signature__image {
+        max-width: 960px;
+        height: auto;
+        justify-self: center;
+    }
+
+    .noor-page .graphic-charter-mockups {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .noor-page .graphic-charter-page {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: var(--spacing-container-gap);
+    }
+
+    .noor-page .graphic-charter-mockups {
         display: flex;
         flex-direction: column;
         align-items: center;
