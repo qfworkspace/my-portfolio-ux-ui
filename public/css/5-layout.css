@@ -1457,3 +1457,196 @@
         gap: 8px;
     }
 }
+
+
+/* ___________________________________________________________ */
+
+/* ARQ Agency Page */
+.arq-page {
+    position: relative; /* Establishes a positioning context for pseudo-elements and children */
+    min-height: 100dvh; /* Ensures full viewport height coverage on modern mobile browsers */
+}
+
+.arq-page::before {
+    content: ""; /* Mandatory for pseudo-elements to render */
+    position: fixed; /* Locks the background layer to the viewport frame, fixing the mobile zoom issue */
+    inset: 0; /* Shorthand to stretch the element to top: 0, right: 0, bottom: 0, left: 0 */
+    width: 100%;
+    height: 100%;
+    
+    background-image: url(/asset/images/bg-arq2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Accurately scales to screen dimensions without distorting on scroll */
+    
+    z-index: -1; /* Keeps the background image positioned behind all page content */
+    pointer-events: none; /* Allows user clicks and touch gestures to pass straight through */
+    transform: translateZ(0); /* Triggers GPU hardware acceleration for smooth scrolling */
+}
+
+.arq-page__main {
+    padding-top: var(--spacing-project-page-padding-top);
+}
+
+.arq-page .hero-section__title {
+    color: rgba(243, 240, 239, 1);
+}
+
+.arq-page {
+  .project-tag-container--type,
+  .project-tag-container--software {
+    background-color: rgba(129, 49, 76, 1);
+    color: rgba(243, 240, 239, 1);
+  }
+}
+
+.arq-page .hero-section {
+    padding-block: var(--spacing-section-padding-block);
+    
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--spacing-section-gap);
+}
+
+.arq-page .text-container__title {
+    color: rgba(64, 1, 1, 1);
+}
+
+.arq-page .hero-section__text-container {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--neutral-50-transparency-70);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);                 /* Safari support */
+    
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+    padding-inline: var(--spacing-project-container-card-padding-inline);
+    padding-block: var(--spacing-project-container-card-padding-block);
+    gap: var(--spacing-section-gap);
+    margin-right: 48px;
+}
+
+.arq-page .text-container__description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-container-gap);
+}
+
+
+/* ARQ Graphic Charter */
+.arq-page .graphic-charter-breakdown {
+    background-color: var(--neutral-100);
+}
+
+.arq-img {
+    width: 100%;
+    height: 100%;
+    max-height: inherit;
+    object-fit: contain; /* L'image rétrécit pour tenir entièrement dans la div sans déformation */
+    display: block;
+}
+
+.arq-page .graphic-charter-logos-spacing {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-container-gap);
+}
+
+.arq-page .graphic-charter-description {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-container-gap);
+}
+
+.arq-page p.graphic-charter-description__text {
+    max-width: none;
+    width: 100%;
+}
+
+.arq-page .section-header-container {
+    color: var(--fc-global-light);
+}
+
+.arq-page .mockup-description__subtitle {
+    font-style: italic;
+}
+
+.arq-page .see-more__title {
+    color: var(--fc-global-light);
+}
+
+.arq-see-more__section .icon-container {
+    background-color: #FEE7A7;
+}
+
+.arq-page .graphic-charter-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.arq-page .graphic-charter-logos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 640px) {
+    .arq-page .graphic-charter-logos-spacing {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .logo-arq-spacing {
+        flex: 0 0 57.5%;
+        max-width: 70.21%;
+        height: auto;
+    }
+
+    .arq-page .mockup-signature__image {
+        max-width: 960px;
+        height: auto;
+        justify-self: center;
+    }
+
+    .arq-page .mockup-banner {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .arq-page .mockup-banner__image {
+        flex: 1 1 0; /* flex: [grow] grandir pour occuper l'espace restant dans la ligne [shrink] rétrécir si l'écran ou le conteneur devient trop petit [basis] taille de départ */
+        min-width: 0; /* INDISPENSABLE : autorise l'image à rétrécir */
+        height: auto;
+    }
+
+    .arq-page .graphic-charter-mockups {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .arq-page .graphic-charter-page {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: var(--spacing-container-gap);
+    }
+
+    .arq-page .graphic-charter-mockups {
+        gap: 8px;
+    }
+}
