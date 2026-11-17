@@ -76,6 +76,13 @@ p, a, span, li, button {
     max-width: 50.625rem ; /* 810px */
 }
 
+button {
+    background-color: transparent;
+    color: var(--blue-900);
+    border: none;
+    cursor: pointer;
+}
+
 .text-justify {
     text-align: justify;
     -webkit-hyphens: auto;                  /* Safari / iOS */
@@ -99,13 +106,6 @@ a:hover {
 
 li {
     list-style: none;
-}
-
-button {
-    background-color: transparent;
-    color: var(--blue-900);
-    border: none;
-    cursor: pointer;
 }
 
 mark {

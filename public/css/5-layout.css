@@ -396,7 +396,7 @@
 .contact-page__nav {
     display: flex;
     justify-content: space-between;
-    gap: var(--spacing-container-gap);
+    gap: var(--spacing-container-gap); /* former: var(--spacing-container-gap)*/
     background-color: var(--neutral-50-transparency-70);
     padding-right: var(--spacing-btn-padding-inline);
     border-radius: var(--radius-btn);
@@ -425,7 +425,7 @@
     padding: var(--spacing-card-padding);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-container-gap);
+    gap: 20px; /* former: var(--spacing-container-gap) */
 }
 
 /* Form container, title and placeholder in components.css */
@@ -449,7 +449,7 @@
     flex-direction: column;
     align-items: center;
     color: var(--fc-paragraph-light);
-    gap: var(--spacing-container-gap);
+    gap: 20px; /* former: var(--spacing-container-gap) */
 }
 
 .contact-page__logo {
@@ -1510,7 +1510,7 @@
 }
 
 .arq-page .text-container__title {
-    color: rgba(64, 1, 1, 1);
+    color: var(--fc-global-dark);
 }
 
 .arq-page .hero-section__text-container {
@@ -1648,5 +1648,103 @@
 
     .arq-page .graphic-charter-mockups {
         gap: 8px;
+    }
+}
+
+
+/* Page 404 */
+html:has(body.page-404) {
+    background-color: var(--blue-50);
+}
+
+.page-404__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: clip; /* Bloque le scroll horizontal proprement */
+}
+
+.page-404__section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre l'image à 200% des deux côtés */
+    gap: 14px;
+}
+
+    /* 404 Image */
+.thumbnail_404 {
+    display: block;
+    width: 200%;
+    max-width: none;
+    height: auto;
+    flex-shrink: 0;
+    pointer-events: none;      /* Empêche le clic droit et le glisser-déposer */
+    user-select: none;         /* Empêche la sélection de l'image */
+    -webkit-user-select: none; /* Compatibilité Safari / iOS */
+    -webkit-touch-callout: none; /* Désactive le menu d'appui long sur iPhone/iPad */
+}
+
+    /* Text area */
+.page-404__text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-inline: 24px;
+    text-align: center;
+}
+
+.page-404 .description {
+    font-family: "Covered By Your Grace", system-ui, sans-serif;
+    font-size: var(--fs-h3);
+}
+
+.page-404 .cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 24px;
+}
+
+.page-404 .button {
+    background-color: rgb(44, 52, 75);
+    color: var(--fc-global-light);
+}
+
+.page-404 .button:hover, .icon-container:hover {
+    background-color: var(--bg-btn-primary-hover);
+    color: var(--fc-global-dark);
+}
+
+.page-404 .button--link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+
+.button--link:hover {
+    color: var(--fc-global-dark);
+}
+
+
+
+@media (min-width: 640px) {
+    .page-404 .cta-container {
+        flex-direction: row;
+    }
+
+    .thumbnail_404 {
+        width: 150%;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .thumbnail_404 {
+        width: 100%;
     }
 }

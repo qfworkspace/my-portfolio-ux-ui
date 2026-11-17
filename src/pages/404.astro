@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Error 404" 
+  bodyClass="page-404" 
+  mainClass="page-404__main" 
+  showFooter={false}>
+
+
+    <section class="page-404__section">
+        <img src="/asset/images/404_thumbnail2.png" alt="Error 404" class="thumbnail_404"/>
+        <div class="page-404__text-container">
+            <p class="description">Sorry, this page doesn't exist or has been removed.</p>
+            <div class="cta-container">
+                <button type="button" onclick="history.back()" class="button">Back to the previous page</button>
+                <a href="/" class="button--link">Back to home page</a>
+            </div>
+        </div>
+    </section>
+
+</Layout>
