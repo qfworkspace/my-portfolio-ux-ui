@@ -10,6 +10,7 @@
     padding-block: var(--spacing-btn-padding-block);
     border-radius: 30px;
     text-decoration: none;
+    font-size: var(--fs-body);
     transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
@@ -18,16 +19,19 @@
     box-shadow: var(--shadow-btn-highlight);
     transform: translateY(-2px);
     text-decoration: none;
+    font-size: var(--fs-body);
 }
 
 .button--link {
     width: fit-content;
     display: flex;
     text-decoration: underline;
+    font-size: var(--fs-body);
 }
 
 .button--link:hover {
     color: var(--blue-50);
+    font-size: var(--fs-body);
 }
 
 

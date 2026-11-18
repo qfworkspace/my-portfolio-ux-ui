@@ -1,35 +1,120 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro'; // 1. Added import
 ---
 
-<Layout title="About me – Work In Progress" showFooter={false}>
-    <div class="wip-page">
+<Layout 
+title="About me" 
+bodyClass="about-page" 
+mainClass="about-page__main">
 
-        <div class="wip-page__main" id="wip-placeholder">
+    <Breadcrumb 
+    currentPage="About me"
+    parentCategory="My Branding Projects" />
+    
+    <section class="section authors-career">
 
-            <section class="section wip-page__content">
-                <!-- Top Star Divider -->
-                <div class="wip-page__divider" aria-hidden="true">
-                    <span class="wip-page__star">★</span>
-                    <span class="wip-page__star">★</span>
-                    <span class="wip-page__star">★</span>
-                </div>
-
-                <!-- Main Heading -->
-                <h1 class="wip-page__title">Work in<br>Progress</h1>
-
-                <!-- Subtitle -->
-                <p class="wip-page__description">
-                    I'm making lots of improvements and will be back soon.
-                </p>
-
-                <!-- Action Link -->
-                <a href="index.html" class="btn btn--primary wip-page__cta">
-                    Back to Home
-                </a>
-            </section>
-
+        <div class="about-page__container authors-intro">
+            <img 
+            src=""
+            alt="Profile picture of the designer"
+            class="authors-intro__profile-picture">
+            <h1 class="authors-intro__title">About me</h1>
+            <p class="authors-intro__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
         </div>
 
-    </div>
+        <div class="about-page__container authors-journey">
+            <h2 class="authors-journey__title">My journey flow</h2>
+            <p class="authors-journey__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+            <img src="/asset/images/flowchart_mobile.png" alt="" class="authors-journey__flowchart--mobile">
+            <img src="/asset/images/flowchart.png" alt="" class="authors-journey__flowchart">
+        </div>
+
+        <div class="about-page__container authors-expertise">
+            <h2 class="authors-expertise__title">My area of expertise</h2>
+            <p class="authors-expertise__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+            <div class="authors-expertise__expertise-container">
+
+                <div class="authors-expertise__expertise">
+                    <h3 class="authors-expertise__expertise-title">UI/UX Design</h3>
+                    <div class="authors-expertise__expertise-projects">
+                        <p class="authors-expertise__expertise-project-count">10 projects</p>
+                    </div>
+                    <p class="authors-expertise__expertise-description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+                </div>
+
+                <div class="authors-expertise__expertise">
+                    <h3 class="authors-expertise__expertise-title">Brand design</h3>
+                    <div class="authors-expertise__expertise-projects">
+                        <p class="authors-expertise__expertise-project-count">9 projects</p>
+                    </div>
+                    <p class="authors-expertise__expertise-description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+                </div>
+
+                <div class="authors-expertise__expertise">
+                    <h3 class="authors-expertise__expertise-title">Product design</h3>
+                    <div class="authors-expertise__expertise-projects">
+                        <p class="authors-expertise__expertise-project-count">4 projects</p>
+                    </div>
+                    <p class="authors-expertise__expertise-description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="about-page__container authors-methods">
+            <h2 class="authors-methods__title">My working methods</h2>
+            <p class="authors-methods__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+            <div class="authors-methods__methods-container">
+                <div class="authors-methods__method">
+                    <div class="authors-methods__method-tag">
+                        <p class="authors-methods__method-name">User Map Journey</p>
+                    </div>
+                    <p class="authors-methods__method-description">Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+
+                <div class="authors-methods__method">
+                    <div class="authors-methods__method-tag">
+                        <p class="authors-methods__method-name">User Flowchart</p>
+                    </div>
+                    <p class="authors-methods__method-description">Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+
+                <div class="authors-methods__method">
+                    <div class="authors-methods__method-tag">
+                        <p class="authors-methods__method-name">Auto Layout</p>
+                    </div>
+                    <p class="authors-methods__method-description">Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-page__container authors-interests">
+            <h2 class="authors-interests__title">I love to</h2>
+            <div class="authors-interests__interests-container">
+                <div class="authors-interests__interest">
+                    <img src="" alt="" class="authors-interests__interest-icon">
+                    <p class="authors-interests__interest-name">write</p>
+                </div>
+
+                <div class="authors-interests__interest">
+                    <img src="" alt="" class="authors-interests__interest-icon">
+                    <p class="authors-interests__interest-name">travel</p>
+                </div>
+
+                <div class="authors-interests__interest">
+                    <img src="" alt="" class="authors-interests__interest-icon">
+                    <p class="authors-interests__interest-name">spend time with my family</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="section authors-contact">
+        <h2 class="authors-contact__title">Are you interested in my profile?</h2>
+        <a href="/contact" class="button authors-contact__button">Let's discuss!</a>
+    </section>
+
 </Layout>

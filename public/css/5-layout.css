@@ -1748,3 +1748,142 @@ html:has(body.page-404) {
         width: 100%;
     }
 }
+
+
+/* About Page */
+.about-page__main {
+    padding-top: var(--spacing-project-page-padding-top);
+    background-color: #CCD7F2;
+}
+
+.authors-career {
+    align-items: flex-start;
+}
+
+.about-page__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-container-gap);
+    padding-block: 24px;
+}
+
+    /* About Page - Intro Section */
+.authors-intro__profile-picture {
+    align-self:flex-end;
+}
+
+    /* About Page – Journey Section */
+.authors-journey__flowchart--mobile {
+    align-self: center;
+    width: 100%;
+    max-width: 353px;
+    height: auto;
+}
+
+
+.authors-journey__flowchart {
+    display: none;
+}
+
+    /* About Page – Expertise Section */
+.authors-expertise__expertise-container {
+    display: flex;
+    gap: var(--spacing-container-gap);
+    overflow-x: auto;                    /* Active le scroll latéral */
+    scroll-snap-type: x mandatory;       /* Force le scroll à s'aimanter carte par carte */
+    scroll-behavior: smooth;             /* Rend le défilement fluide */
+    
+    scrollbar-width: none;               /* Firefox */
+
+    /* 1. Étire le conteneur jusqu'aux bords de l'écran (annule le padding de .section) */
+    width: calc(100% + 2 * var(--spacing-body-padding-inline));
+    margin-inline: calc(-1 * var(--spacing-body-padding-inline));
+    
+    /* 2. Aligne la 1ère et la dernière carte avec le reste du contenu de la page */
+    padding-inline: var(--spacing-body-padding-inline);
+    scroll-padding-inline: var(--spacing-body-padding-inline);
+}
+
+.authors-expertise__expertise-container::-webkit-scrollbar {
+    display: none;                       /* Chrome, Safari, Edge */
+}
+
+.authors-expertise__expertise {
+    background-color: var(--neutral-100);
+    flex: 0 0 90%;          /* Empêche Flexbox de rétrécir la carte : 100 % réel garanti */
+    scroll-snap-align: start;            /* Aligne le début de la carte au bord gauche au scroll */
+    padding-inline: 10px;
+    padding-block: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-card-gap);
+}
+
+.authors-expertise__expertise-projects {
+    background-color: var(--blue-50);
+    width: fit-content;
+    padding-inline: 10px;
+    padding-block: 1px;
+}
+
+    /* About Page – Methods Section */
+.authors-methods__methods-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-container-gap);
+}
+
+.authors-methods__method {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--neutral-100);
+    padding-inline: 10px;
+    padding-block: 20px;
+    gap: var(--spacing-card-gap);
+}
+
+.authors-methods__method-tag {
+    background-color: var(--blue-50);
+    width: fit-content;
+    padding-inline: 10px;
+    padding-block: 1px;
+    font-weight: bold;
+}
+
+    /* About Page – Interests Section */
+.authors-interests__interests-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+    
+.authors-interests__interest {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+
+    /* About Page – Contact Section */
+.about-page .authors-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-inline: auto;
+    padding-inline: var(--spacing-body-padding-inline);
+    padding-block: var(--spacing-section-padding-block);
+
+    background-image: url(/asset/images/bg-picture-contact.png);
+    background-position: center;
+    justify-content: center;
+
+    color: var(--fc-global-light);
+}
+
