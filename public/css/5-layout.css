@@ -1751,44 +1751,115 @@ html:has(body.page-404) {
 
 
 /* About Page */
-.about-page__main {
-    padding-top: var(--spacing-project-page-padding-top);
-    background-color: #CCD7F2;
-}
-
-.authors-career {
-    align-items: flex-start;
-}
-
-.about-page__container {
+/* Typographie spécifique à la page About */
+.about-page__main h1,
+.about-page__main h2,
+.about-page__main h3 {
+    text-align: start;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-container-gap);
-    padding-block: 24px;
 }
 
-    /* About Page - Intro Section */
-.authors-intro__profile-picture {
-    align-self:flex-end;
+.about-page__main h2 {
+    font-family: var(--font-family-paragraph);
+    text-transform: none;
 }
 
-    /* About Page – Journey Section */
-.authors-journey__flowchart--mobile {
-    align-self: center;
-    width: 100%;
-    max-width: 353px;
-    height: auto;
+.about-page__main h3 {
+    text-transform: none;
+    font-family: var(--font-family-paragraph);
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
 }
 
+.about-page__main h3 {
+    text-transform: none;
+}
 
-.authors-journey__flowchart {
+    /* Layout */
+.about-page {
+    background-image: url(/asset/images/bg-about.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+    /* Aside */
+.about-aside {
     display: none;
 }
 
-    /* About Page – Expertise Section */
-.authors-expertise__expertise-container {
+    /* Career section */
+.about-main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-section-gap);
+    
+    width: 100%;
+    /* max-width: 90rem; /* 1440px */
+    margin-inline: auto;
+
+}
+
+.authors-career {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    align-items: flex-start;
+
+    padding-inline: var(--spacing-body-padding-inline);
+    padding-block: var(--spacing-section-padding-block);
+}
+
+.authors-career__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-container-gap);
+    width: 100%;
+}
+
+        /* Intro Section */
+.authors-profile-picture {
+    align-self: flex-end;
+    filter: drop-shadow(0px 4px 22.4px rgba(0, 0, 0, 0.11));
+}
+
+.authors-intro__text-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-container-gap);
+    align-items: flex-start;
+}
+
+    /* Competences Section */
+.authors-competences__tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.authors-competences__tag {
+    display: flex;
+    width: fit-content;
+    padding: 1px 10px;
+}
+
+.authors-competences__tag--research {
+    background-color: var(--brown-50);
+}
+
+.authors-competences__tag--application {
+    background-color: var(--blue-900);
+    color: var(--fc-global-light);
+}
+
+.authors-competences__tag--execution {
+    background-color: var(--blue-500);
+    color: var(--fc-global-light);
+}
+
+    /* Expertise Section */
+.authors-expertise__card-container {
     display: flex;
     gap: var(--spacing-container-gap);
     overflow-x: auto;                    /* Active le scroll latéral */
@@ -1796,7 +1867,6 @@ html:has(body.page-404) {
     scroll-behavior: smooth;             /* Rend le défilement fluide */
     
     scrollbar-width: none;               /* Firefox */
-
     /* 1. Étire le conteneur jusqu'aux bords de l'écran (annule le padding de .section) */
     width: calc(100% + 2 * var(--spacing-body-padding-inline));
     margin-inline: calc(-1 * var(--spacing-body-padding-inline));
@@ -1806,84 +1876,276 @@ html:has(body.page-404) {
     scroll-padding-inline: var(--spacing-body-padding-inline);
 }
 
-.authors-expertise__expertise-container::-webkit-scrollbar {
+.authors-expertise__card-container::-webkit-scrollbar {
     display: none;                       /* Chrome, Safari, Edge */
 }
 
-.authors-expertise__expertise {
+.expertise-card__projects-counter-tag {
+    background-color: var(--blue-50);
+    width: fit-content;
+    padding-inline: 10px;
+    padding-block: 1px;
+}
+
+.authors-expertise__expertise-card {
     background-color: var(--neutral-100);
     flex: 0 0 90%;          /* Empêche Flexbox de rétrécir la carte : 100 % réel garanti */
     scroll-snap-align: start;            /* Aligne le début de la carte au bord gauche au scroll */
     padding-inline: 10px;
     padding-block: 20px;
-
     display: flex;
     flex-direction: column;
     gap: var(--spacing-card-gap);
 }
 
-.authors-expertise__expertise-projects {
-    background-color: var(--blue-50);
-    width: fit-content;
-    padding-inline: 10px;
-    padding-block: 1px;
+.expertise-carousel__controls {
+    display: none;
 }
 
-    /* About Page – Methods Section */
-.authors-methods__methods-container {
+    /* Software Section */
+.authors-tools__softwares-container {
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    flex-wrap: wrap;
     gap: var(--spacing-container-gap);
 }
 
-.authors-methods__method {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--neutral-100);
-    padding-inline: 10px;
-    padding-block: 20px;
-    gap: var(--spacing-card-gap);
-}
-
-.authors-methods__method-tag {
-    background-color: var(--blue-50);
-    width: fit-content;
-    padding-inline: 10px;
-    padding-block: 1px;
-    font-weight: bold;
-}
-
-    /* About Page – Interests Section */
-.authors-interests__interests-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 8px;
-}
-    
-.authors-interests__interest {
+.authors-tools__software-pair {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 8px;
+    gap: 4px;
 }
 
+.authors-tools__software-logo {
+    align-self: flex-start;
+}
 
-    /* About Page – Contact Section */
-.about-page .authors-contact {
+    /* Journey Section */
+.journey-flowchart--mobile {
+    align-self: center;
+    width: 100%;
+    max-width: 353px;
+    height: auto;
+    flex-shrink: 0;
+    pointer-events: none;      /* Empêche le clic droit et le glisser-déposer */
+    user-select: none;         /* Empêche la sélection de l'image */
+    -webkit-user-select: none; /* Compatibilité Safari / iOS */
+    -webkit-touch-callout: none; /* Désactive le menu d'appui long sur iPhone/iPad */
+}
+
+.journey-flowchart {
+    display: none;
+}
+
+/* Outro Section */
+.outro-container {
+    text-align: center;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
+}
 
+/* CTA */
+.about-page .main-cta__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--font-family-heading);
+}
+
+.main-cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-inline: auto;
     padding-inline: var(--spacing-body-padding-inline);
     padding-block: var(--spacing-section-padding-block);
-
     background-image: url(/asset/images/bg-picture-contact.png);
     background-position: center;
     justify-content: center;
-
     color: var(--fc-global-light);
 }
 
+
+@media (min-width: 640px) {
+    .about-page h2 {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 910px) {
+    .about-page h2 {
+        font-size: 24px;
+    }
+
+    .about-page__main {
+        display: flex;
+        align-items: flex-start; /* Indispensable pour que position: sticky fonctionne sur .about-aside ! */
+    }
+
+    /* About Aside */
+    .about-aside {
+        position: sticky;
+        top: 56px;
+        left: 0;
+        width: 100%;
+        max-width: 400px;
+        height: 95vh;
+        color: var(--fc-global-light);
+
+        padding-inline: 60px 60px;
+        padding-block: 100px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: var(--spacing-section-gap);
+        z-index: 10;
+
+        flex-shrink: 0; /* Empêche la sidebar de rétrécir quand le contenu à droite est large */
+    }
+
+    .about-aside::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -110px;
+        width: calc(100% + 110px);
+        height: 100%;
+        background-color: var(--blue-900);
+        border-radius: 1000px 1000px 0 0;
+        z-index: -1;
+    }
+
+    .about-main {
+        flex: 1; /* Prend automatiquement 100% de l'espace restant ! */
+        min-width: 0; /* Évite que les images ou grilles à l'intérieur ne fassent déborder le conteneur */
+        padding-top: 8rem; /* 158px */
+    }
+
+    .about-24px-title {
+        font-family: var(--font-family-paragraph);
+        font-weight: bold;
+        font-size: 18px;
+        text-transform: none;
+    }
+
+        /* Aside Info container */
+    .about-aside__infos {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-container-gap);
+    }
+
+    .aside-info__container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .aside-info__text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+        /* Aside Form Container */
+    .about-aside__form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .about-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-container-gap);
+    }
+    
+    .form-container {
+        display: flex;
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .form-label {
+        font-family: var(--font-family-paragraph);
+        font-size: var(--fs-body);
+    }
+
+    .form-placeholder {
+        background-color: rgba(243, 244, 246, 0.61);
+    }
+
+    .form-submit-button__container {
+        background-color: var(--blue-500);
+    }
+
+    .form-submit-button {
+        color: var(--blue-900);
+    }
+
+        /* Main Section */
+    .authors-career {
+        padding-inline: 3.5rem;
+    }
+
+            /* Expertise Section */
+    .authors-expertise__card-container {
+        width: calc(100% + 7rem); /* 3.5rem gauche + 3.5rem droite du padding de .authors-career */
+        margin-inline: -3.5rem;
+        padding-inline: 3.5rem;
+        scroll-padding-inline: 3.5rem;
+        overflow-x: auto;
+    }
+
+    .expertise-carousel__controls {
+        display: flex;
+        gap: 12px;
+    }
+
+    .expertise-carousel__btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid var(--blue-900);
+        background-color: transparent;
+        color: var(--blue-900);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .expertise-carousel__btn:hover {
+        background-color: var(--blue-900);
+        color: var(--fc-global-light);
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .authors-intro {
+        display: flex;
+        flex-direction: row;
+        align-self: flex-end;
+    }
+
+    .journey-flowchart--mobile {
+        display: none;
+    }
+
+    .journey-flowchart {
+        display: block;
+        width: 100%; 
+        height: auto;
+    }
+}

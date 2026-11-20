@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro'; // 1. Added import
 ---
 
 <Layout 
@@ -8,113 +7,243 @@ title="About me"
 bodyClass="about-page" 
 mainClass="about-page__main">
 
-    <Breadcrumb 
-    currentPage="About me"
-    parentCategory="My Branding Projects" />
     
-    <section class="section authors-career">
+    <aside class="about-aside">
+        <!-- <div class="about-aside__infos">
+            <div class="aside-info__container">
+                <p class="about-24px-title aside-info__title">My location</p>
+                <div class="aside-info__text-container">
+                    <p class="authors-location">Birmingham, UK</p>
+                    <p class="authors-location">Available worldwide online</p>
+                </div>
+            </div> 
 
-        <div class="about-page__container authors-intro">
-            <img 
-            src=""
-            alt="Profile picture of the designer"
-            class="authors-intro__profile-picture">
-            <h1 class="authors-intro__title">About me</h1>
-            <p class="authors-intro__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
-        </div>
+            <div class="aside-info__container">
+                <p class="about-24px-title aside-info__title">My languages</p>
+                <div class="aside-info__text-container">
+                    <p class="authors-language">French (France)</p>
+                    <p class="authors-language">English (UK &amp; US)</p>
+                    <p class="authors-language">Creole (Guadeloupe)</p>
+                </div>
+            </div>
+        </div> -->
 
-        <div class="about-page__container authors-journey">
-            <h2 class="authors-journey__title">My journey flow</h2>
-            <p class="authors-journey__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
-            <img src="/asset/images/flowchart_mobile.png" alt="" class="authors-journey__flowchart--mobile">
-            <img src="/asset/images/flowchart.png" alt="" class="authors-journey__flowchart">
-        </div>
-
-        <div class="about-page__container authors-expertise">
-            <h2 class="authors-expertise__title">My area of expertise</h2>
-            <p class="authors-expertise__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
-            <div class="authors-expertise__expertise-container">
-
-                <div class="authors-expertise__expertise">
-                    <h3 class="authors-expertise__expertise-title">UI/UX Design</h3>
-                    <div class="authors-expertise__expertise-projects">
-                        <p class="authors-expertise__expertise-project-count">10 projects</p>
+        <section class="about-aside__form">
+            <h2 class="about-24px-title about-form__title">Let's discuss</h2>
+            <form class="about-form">
+                <div class="form-container">
+                    <div class="input-container">
+                        <label for="user-name" class="p form-label">Your name*</label>
+                        <input 
+                        id="user-name"
+                        name="name"
+                        type="text" 
+                        placeholder="Enter your name"
+                        class="p form-placeholder"
+                        required>
                     </div>
-                    <p class="authors-expertise__expertise-description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+
+                    <div class="input-container">
+                        <label for="user-email" class="p form-label">Your email*</label>
+                        <input 
+                        id="user-email"
+                        name="email"
+                        type="email" 
+                        placeholder="Enter your email" 
+                        class="p form-placeholder"
+                        required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="user-phone-number" class="p form-label">Your phone number*</label>
+                        <input 
+                        id="user-phone-number"
+                        name="phone"
+                        type="tel" 
+                        placeholder="Enter your phone number" 
+                        class="p form-placeholder"
+                        required>
+                    </div>
                 </div>
 
-                <div class="authors-expertise__expertise">
-                    <h3 class="authors-expertise__expertise-title">Brand design</h3>
-                    <div class="authors-expertise__expertise-projects">
-                        <p class="authors-expertise__expertise-project-count">9 projects</p>
+                <div class="button form-submit-button__container">
+                    <button type="submit" class="p form-submit-button">Send me your contact</button>
+                </div>
+            </form>
+
+        </section>
+    </aside>
+
+    <div class="about-main">
+        <div class="authors-career">
+            <section class="authors-career__section authors-intro">
+                <img src="/asset/images/bg-photo-profil.png" alt="Profile picture of the designer" class="authors-profile-picture">
+                <div class="authors-intro__text-container">
+                    <h1 class="authors-intro__title">Hi there!<br/>I am Qetsia FONTANGE</h1>
+                    <p class="authors-intro__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+                </div>
+            </section>
+
+            <section class="authors-career__section authors-competences">
+                <h2 class="about-main-h2-title authors-competences__title">My competences</h2>
+                <div class="authors-competences__tags-container">
+                    <div class="authors-competences__tag authors-competences__tag--research">
+                        <p class="authors-competences__tag__text">Cognitive biases</p>
                     </div>
-                    <p class="authors-expertise__expertise-description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+
+                    <div class="authors-competences__tag authors-competences__tag--research">
+                        <p class="authors-competences__tag__text">User psychology</p>
+                    </div>
+
+                    <div class="authors-competences__tag authors-competences__tag--research">
+                        <p class="authors-competences__tag__text">User research</p>
+                    </div>
+
+                    <div class="authors-competences__tag authors-competences__tag--research">
+                        <p class="authors-competences__tag__text">Accessibility</p>
+                    </div>
+
+                    <div class="authors-competences__tag authors-competences__tag--application">
+                        <p class="authors-competences__tag__text">User flow</p>
+                    </div>
+
+                    <div class="authors-competences__tag authors-competences__tag--application">
+                        <p class="authors-competences__tag__text">Information architecture</p>
+                    </div>
+
+                    <div class="authors-competences__tag authors-competences__tag--application">
+                        <p class="authors-competences__tag__text">Design system</p>
+                    </div>
+
+                    <div class="authors-competences__tag authors-competences__tag--application">
+                        <p class="authors-competences__tag__text">Responsive design</p>
+                    </div>
+
+                    <div class="authors-competences__tag authors-competences__tag--application">
+                        <p class="authors-competences__tag__text">Prototyping</p>
+                    </div>
+
+                    <div class="authors-competences__tag authors-competences__tag--execution">
+                        <p class="authors-competences__tag__text">Front-end awareness</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="authors-career__section authors-expertise">
+                <div class="intro-container">
+                    <h2 class="about-main-h2-title intro-container__title">My area of expertise</h2>
+                    <p class="intro-container__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
                 </div>
 
-                <div class="authors-expertise__expertise">
-                    <h3 class="authors-expertise__expertise-title">Product design</h3>
-                    <div class="authors-expertise__expertise-projects">
-                        <p class="authors-expertise__expertise-project-count">4 projects</p>
+                <div class="authors-expertise__card-container">
+                    <div class="authors-expertise__expertise-card">
+                        <h3 class="about-24px-title expertise-card__title">UX/UI design</h3>
+                        <div class="expertise-card__projects-counter-tag">
+                            <p class="expertise-card__projects">10 projects</p>
+                        </div>
+                        <p class="expertise-card__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
                     </div>
-                    <p class="authors-expertise__expertise-description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+
+                    <div class="authors-expertise__expertise-card">
+                        <h3 class="about-24px-title expertise-card__title">Brand design</h3>
+                        <div class="expertise-card__projects-counter-tag">
+                            <p class="expertise-card__projects">9 projects</p>
+                        </div>
+                        <p class="expertise-card__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+                    </div>
+
+                    <div class="authors-expertise__expertise-card">
+                        <h3 class="about-24px-title expertise-card__title">Product design</h3>
+                        <div class="expertise-card__projects-counter-tag">
+                            <p class="expertise-card__projects">4 projects</p>
+                        </div>
+                        <p class="expertise-card__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+                    </div>
                 </div>
 
+                <div class="expertise-carousel__controls">
+                    <button type="button" class="expertise-carousel__btn expertise-carousel__btn--prev" aria-label="Previous expertise">←</button>
+                    <button type="button" class="expertise-carousel__btn expertise-carousel__btn--next" aria-label="Next expertise">→</button>
+                </div>
+                
+            </section>
+
+            <section class="authors-career__section authors-tools">
+                <div class="intro-container">
+                    <h2 class="about-main-h2-title intro-container__title">My daily tools</h2>
+                    <p class="intro-container__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+                </div>
+
+                <div class="authors-tools__softwares-container">
+                    <img src="/asset/images/software-figma.png" alt="Logo of Figma" class="authors-tools__software-logo">
+                    <img src="/asset/images/software-vs-code.png" alt="Logo of VS Code" class="authors-tools__software-logo">
+                    <div class="authors-tools__software-pair">
+                        <img src="/asset/images/software-illustrator.png" alt="Logo of Illustrator" class="authors-tools__software-logo">
+                        <img src="/asset/images/software-vectorcraft.png" alt="Logo of Vectorcraft" class="authors-tools__software-logo">
+                    </div>
+
+                    <div class="authors-tools__software-pair">
+                        <img src="/asset/images/software-photoshop.png" alt="Logo of Photoshop" class="authors-tools__software-logo">
+                        <img src="/asset/images/software-photocraft.png" alt="Logo of Photocraft" class="authors-tools__software-logo">
+                    </div>
+
+                    <div class="authors-tools__software-pair">
+                        <img src="/asset/images/software-word.png" alt="Logo of Word" class="authors-tools__software-logo">
+                        <img src="/asset/images/software-wordcraft.png" alt="Logo of Wordcraft" class="authors-tools__software-logo">
+                    </div>
+
+                    <div class="authors-tools__software-pair">
+                        <img src="/asset/images/software-excel.png" alt="Logo of Excel" class="authors-tools__software-logo">
+                        <img src="/asset/images/software-gridcraft.png" alt="Logo of Gridcraft" class="authors-tools__software-logo">
+                    </div>
+                </div>
+
+                <p class="authors-tools__description">And other important tools that I am trying to deepen...</p>
+                <img src="/asset/images/software-make.png" alt="Logo of Make" class="authors-tools__software-logo">
+            </section>
+
+            <section class="authors-career__section authors-journey">
+                <div class="intro-container">
+                    <h2 class="about-main-h2-title intro-container__title">My journey flow</h2>
+                    <p class="intro-container__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
+                </div>
+                <img src="/asset/images/flowchart_mobile.png" alt="The author's journey flowchart" class="journey-flowchart--mobile">
+                <img src="/asset/images/flowchart.png" alt="The author's journey flowchart" class="journey-flowchart">
+            </section>
+
+            <div class="authors-career__section outro-container">
+                <p class="outro-description">I’m a multidisciplinary UX/UI and Product Designer who sits at the intersection of behavioral psychology, brand strategy, and technical feasibility. My non-linear path taught me how to listen across cultures, adapt fast, and turn complex problems into clear, structured interfaces.</p>
+                <p>If you're looking for someone who cares as much about the 'why' behind user behavior as the precision of the final UI, let's build something meaningful together.</p>
             </div>
         </div>
 
-        <div class="about-page__container authors-methods">
-            <h2 class="authors-methods__title">My working methods</h2>
-            <p class="authors-methods__description">Lorem ipsum dolor sit amet consectetur. Faucibus arcu odio ultrices tincidunt a purus vestibulum.</p>
-            <div class="authors-methods__methods-container">
-                <div class="authors-methods__method">
-                    <div class="authors-methods__method-tag">
-                        <p class="authors-methods__method-name">User Map Journey</p>
-                    </div>
-                    <p class="authors-methods__method-description">Lorem ipsum dolor sit amet consectetur.</p>
-                </div>
-
-                <div class="authors-methods__method">
-                    <div class="authors-methods__method-tag">
-                        <p class="authors-methods__method-name">User Flowchart</p>
-                    </div>
-                    <p class="authors-methods__method-description">Lorem ipsum dolor sit amet consectetur.</p>
-                </div>
-
-                <div class="authors-methods__method">
-                    <div class="authors-methods__method-tag">
-                        <p class="authors-methods__method-name">Auto Layout</p>
-                    </div>
-                    <p class="authors-methods__method-description">Lorem ipsum dolor sit amet consectetur.</p>
-                </div>
+        <section class="section main-cta-container">
+            <h2 class="main-cta__title">You are interested in my profile?</h2>
+            <div class="button button-to-contact-container">
+                <a href="/contact" class="button-to-contact">Contact me</a>
             </div>
-        </div>
-
-        <div class="about-page__container authors-interests">
-            <h2 class="authors-interests__title">I love to</h2>
-            <div class="authors-interests__interests-container">
-                <div class="authors-interests__interest">
-                    <img src="" alt="" class="authors-interests__interest-icon">
-                    <p class="authors-interests__interest-name">write</p>
-                </div>
-
-                <div class="authors-interests__interest">
-                    <img src="" alt="" class="authors-interests__interest-icon">
-                    <p class="authors-interests__interest-name">travel</p>
-                </div>
-
-                <div class="authors-interests__interest">
-                    <img src="" alt="" class="authors-interests__interest-icon">
-                    <p class="authors-interests__interest-name">spend time with my family</p>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <section class="section authors-contact">
-        <h2 class="authors-contact__title">Are you interested in my profile?</h2>
-        <a href="/contact" class="button authors-contact__button">Let's discuss!</a>
-    </section>
+        </section>
+    </div>
 
 </Layout>
+
+<script>
+    const track = document.querySelector<HTMLElement>('.authors-expertise__card-container');
+    const prevBtn = document.querySelector<HTMLButtonElement>('.expertise-carousel__btn--prev');
+    const nextBtn = document.querySelector<HTMLButtonElement>('.expertise-carousel__btn--next');
+
+    if (track && prevBtn && nextBtn) {
+        const getScrollStep = () => {
+            const card = track.querySelector<HTMLElement>('.authors-expertise__expertise-card');
+            return card ? card.offsetWidth : 300;
+        };
+
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        });
+    }
+</script>

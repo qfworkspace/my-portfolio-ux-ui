@@ -42,22 +42,25 @@ html {
 
 h1, h2, h3, h4 {
     font-family: var(--font-family-heading);
-    text-transform: uppercase;
+    letter-spacing: 0.03125em;
 }
 
 .hero-title {
     font-size: var(--fs-hero);
     text-align: center;
+    text-transform: uppercase;
 }
 
 h1 {
     font-size: var(--fs-h1);
     text-align: center;
+    text-transform: uppercase;
 }
 
 h2 {
     font-size: var(--fs-h2);
     text-align: center;
+    text-transform: uppercase;
 }
 
 h3 {

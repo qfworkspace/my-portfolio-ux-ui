@@ -55,6 +55,7 @@
     --spacing-header-padding-block: 1.25rem; /* 20px */
     --spacing-footer-padding-inline: 1.25rem; /* 20 px */
     --spacing-footer-padding-block: 3.5rem; /* 56px */
+    --spacing-section-padding-inline: 1.25rem; /* 20 px */
     --spacing-section-padding-block: 3.5rem; /* 56px */
     --spacing-section-gap: 2rem; /* 32px */
     --spacing-container-gap: 1.25rem; /* 20px */
@@ -98,7 +99,7 @@
     
         /* Font Size */
         --fs-hero: 4.25rem; /* 68px */
-        --fs-h1: 3.125rem; /* 50px */
+        --fs-h1: 3.125rem; /* 48px */
         --fs-h2: 2.375rem; /* 38px */
         --fs-h3: 1.75rem; /* 28px */
         --fs-h4: 1.375rem; /* 22px */
@@ -110,6 +111,7 @@
         --spacing-header-padding-block: 1.25rem; /* 20px */
         --spacing-footer-padding-inline: 3rem; /* 48 px */
         --spacing-footer-padding-block: 4rem; /* 64px */
+        --spacing-section-padding-inline: 3rem; /* 48 px */
         --spacing-section-padding-block: 4rem; /* 64px */
         --spacing-section-gap: 2rem; /* 32px */
         --spacing-container-gap: 1.25rem; /* 20px */
@@ -127,7 +129,7 @@
 
         /* Font Size */
         --fs-hero: 5.5rem; /* 88px */
-        --fs-h1: 4rem; /* 64px */
+        --fs-h1: 3.125rem; /* 48px */
         --fs-h2: 3rem; /* 48px */
         --fs-h3: 2.125rem; /* 34px */
         --fs-h4: 1.625rem; /* 26px */
@@ -140,9 +142,10 @@
         --spacing-header-gap: 2rem; /* 32 */
         --spacing-footer-padding-inline: 6.5rem; /* 104 px */
         --spacing-footer-padding-block: 5rem; /* 80px */
+        --spacing-section-padding-inline: 6.5rem; /* 104 px */
         --spacing-section-padding-block: 5rem; /* 80px */
         --spacing-section-gap: 3rem; /* 48px */
-        --spacing-container-gap: 3rem; /* 48px */
+        --spacing-container-gap: 1.625rem; /* 26px */
         --spacing-card-padding: 2rem; /* 32px */
 
         --spacing-project-container-card-margin-inline: 6.5rem; /* 104 px */
