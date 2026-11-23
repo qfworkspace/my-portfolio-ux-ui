@@ -2106,7 +2106,7 @@ html:has(body.page-404) {
         overflow-x: auto;
     }
 
-    .expertise-carousel__controls {
+    .about-page .expertise-carousel__controls {
         display: flex;
         gap: 12px;
     }
@@ -2147,5 +2147,213 @@ html:has(body.page-404) {
         display: block;
         width: 100%; 
         height: auto;
+    }
+}
+
+
+/* Reference Page */
+.references-page {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.references-page__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* Rogné sur les côtés sans déformer l'image */
+    object-position: center bottom; /* Garde le bas de l'image (étoiles) visible */
+    z-index: 0;
+    pointer-events: none;       /* L'image ne bloque jamais les clics */
+}
+
+.reference {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-section-gap);
+    width: 100%;
+    padding-block: 120px;
+
+    padding-inline: 0;
+}
+
+.reference-container,
+.expertise-carousel__controls {
+    position: relative;
+    z-index: 1;
+}
+
+.reference-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-section-gap);
+
+    width: 100%;
+    max-width: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    /* Permet à n'importe quelle carte de se centrer exactement au milieu */
+    padding-inline: calc(50% - min(353px, 100% - 40px) / 2);
+
+    /* Masque la barre de scroll tout en gardant le défilement actif */
+    scrollbar-width: none;
+}
+
+.reference-container::-webkit-scrollbar {
+    display: none;
+}
+
+.reference-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-container-gap);
+    padding: var(--spacing-card-padding);
+
+    background-color: rgba(255, 255, 255, 0.55);
+    border-radius: var(--radius-card);
+
+    box-shadow: 1px 6px 39px 0px rgba(0, 0, 0, 0.15);
+
+    backdrop-filter: blur(28px);                 /* Floute sans effacer la silhouette */
+    -webkit-backdrop-filter: blur(28px);
+
+    width: min(353px, calc(100vw - 40px));
+    max-width: 353px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+
+    text-align: center;
+
+    flex-shrink: 0; /* Indispensable pour que les cartes gardent leur vraie largeur côte à côte */
+}
+
+.reference-card__profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+}
+
+.reference-card__profile-picture {
+    width: 136px;
+    height: auto;
+    border-radius: 1000px;
+}
+
+.reference-card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-container-gap);
+
+    height: 100%;
+    width: 100%;
+}
+
+.reference-quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+    
+    height: 100%;
+    width: 100%;
+}
+
+/* .reference-quote__text--desktop {
+    display: none;
+} */
+
+.reference-pdf-button {
+    background-color: var(--blue-900);
+    color: var(--fc-global-light);
+    padding-block: 10px;
+}
+
+.reference-pdf-button.reference-pdf-button:hover,
+.reference-pdf-button.reference-pdf-button:focus-visible {
+    background-color: var(--brown-50);
+    color: var(--fc-global-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.expertise-carousel__controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    gap: 12px;
+}
+
+.expertise-carousel__btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--blue-900);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--blue-900);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.expertise-carousel__btn:hover {
+    background-color: var(--blue-900);
+    color: var(--fc-global-light);
+}
+
+@media (min-width: 640px) {
+    .reference {
+        padding-top: 200px;
+        padding-bottom: 100px;
+        padding-inline: 0;
+    }
+
+    .reference-container {
+        gap: 104px;
+        /* Respecte au minimum 20px de marge de chaque côté, et centre si l'écran > 840px */
+        padding-inline: max(20px, calc(50% - 400px));
+    }
+
+    .reference-card {
+        flex-direction: row-reverse;
+        /* Fill container (moins les paddings latéraux) jusqu'à 800px max */
+        width: min(800px, calc(100vw - 40px));
+        max-width: 800px;
+        height: 350px;
+        gap: 40px;
+    }
+
+    .reference-card__profile,
+    .reference-card__body {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+        justify-content: center;
+    }
+
+    .reference-quote {
+        height: fit-content;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .reference-card {
+        padding: 50px;
     }
 }
