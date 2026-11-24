@@ -2244,6 +2244,10 @@ html:has(body.page-404) {
     width: 100%;
 }
 
+.reference-card__last-name { 
+    text-transform: uppercase; 
+}
+
 .reference-card__profile-picture {
     width: 136px;
     height: auto;
@@ -2270,6 +2274,15 @@ html:has(body.page-404) {
     
     height: 100%;
     width: 100%;
+}
+
+.reference-quote__text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8; /* Tronque automatiquement après 8 lignes avec "..." */
+    line-clamp: 8;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* .reference-quote__text--desktop {
@@ -2355,5 +2368,144 @@ html:has(body.page-404) {
 @media (min-width: 1024px) {
     .reference-card {
         padding: 50px;
+    }
+}
+
+
+/* PDF viewer */
+html:has(.pdf-viewer-page),
+.pdf-viewer-page {
+    background-color: rgba(37, 37, 37, 1);
+}
+
+    /* PDF viewer header */
+.pdf-viewer-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    z-index: 100;
+
+    background-color: rgba(60, 60, 60, 1);
+    color: var(--fc-global-light);
+
+    padding-block: 20px;
+    padding-inline: var(--spacing-body-padding-inline);
+}
+
+.pdf-viewer-header__title {
+    font-family: var(--font-family-paragraph);
+    font-size: var(--fs-body);
+    text-transform: none;
+    font-weight: normal;
+}
+
+.pdf-to-reference-button {
+    width: 20px;
+    height: auto;
+}
+
+.pdf-viewer {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 60px;
+}
+
+.pdf-viewer__sidebar {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-container-gap);
+
+    justify-content: center;
+
+    padding-block: 20px;
+
+    border-bottom: 1px solid #5E5E5E;
+}
+
+.pdf-viewer__thumb.is-active .pdf-viewer__thumb-img {
+    outline: 5.17px solid #8AB4F7;
+    outline-offset: -5.17px;
+}
+
+.pdf-viewer__thumb {
+    display: flex;
+    flex-direction: column;
+    color: var(--fc-global-light);
+    gap: 8px;
+
+    align-items: center;
+    width: fit-content;
+    min-width: 131px;
+
+}
+
+.pdf-viewer__thumb-img {
+    width: 115px;
+    height: auto;
+}
+
+    /* PDF Section */
+.pdf-preview {
+    flex: 1;                  /* Fill sur l'axe principal (remplit le reste de l'écran) */
+    width: 100%;              /* Fill en largeur */
+    min-width: 0;             /* Empêche le débordement horizontal en flexbox */
+    padding-inline: 20px;
+    padding-block: 24px;
+
+    display: flex;
+    justify-content: center;  /* Centre horizontalement */
+    align-items: flex-start;  /* Aligne en haut (mets 'center' si tu veux centrer verticalement) */
+    overflow-y: auto;
+}
+
+.pdf-preview__frame {
+    width: 100%;              /* Width: Fill container (prend toute la largeur moins les 20px de padding) */
+    max-width: 750px;         /* Limite la largeur sur grand écran desktop pour rester lisible */
+    aspect-ratio: 1 / 1.414;  /* Équivalent du Height Auto au format A4 exact */
+    border: none;
+    background-color: transparent;
+}
+
+
+@media (min-width: 910px) {
+    .pdf-viewer {
+        flex-direction: row;
+        height: calc(100dvh - 60px); /* Remplit exactement le reste de l'écran sous le header */
+        overflow: hidden;            /* Empêche le scroll global de la page */
+    }
+
+    .pdf-viewer__sidebar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        height: 100%;                /* Fonctionne maintenant car .pdf-viewer a une hauteur exacte */
+        flex-shrink: 0;              /* Empêche la sidebar de rétrécir */
+        overflow-y: auto;            /* Permet de scroller la sidebar s'il y a beaucoup de versions */
+
+        padding: 50px;
+
+        border-bottom: none;         /* Supprime le trait du bas de la vue mobile */
+        border-right: 1px solid #5E5E5E;
+    }
+
+    .pdf-preview {
+        height: 100%;                /* Prend toute la hauteur disponible */
+        overflow-y: auto;            /* Active le scroll uniquement sur la zone du PDF */
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .pdf-viewer-header {
+        padding-inline: 50px;
     }
 }

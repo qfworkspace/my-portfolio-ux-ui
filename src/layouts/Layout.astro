@@ -10,6 +10,7 @@ interface Props {
   mainClass?: string;
   showHeader?: boolean; // <-- 1. Optional Header prop
   showFooter?: boolean; // <-- 2. Optional Footer prop
+  noIndex?: boolean;
 }
 
 const { 
@@ -18,7 +19,8 @@ const {
   bodyClass = "",       // <-- 2. Vide par défaut
   mainClass = "",
   showHeader = true,
-  showFooter = true
+  showFooter = true,
+  noIndex = false
 } = Astro.props;
 ---
 
@@ -29,6 +31,7 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>{title}</title>
     <meta name="description" content={description}>
+    {noIndex && <meta name="robots" content="noindex, nofollow" />} <!-- 3. S'affiche uniquement si noIndex={true} -->
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

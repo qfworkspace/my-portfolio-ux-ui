@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ReferenceCard from '../components/ReferenceCard.astro';
 ---
 
 <Layout 
@@ -17,62 +18,25 @@ mainClass="references-page__main">
         />
 
         <div class="reference-container">
-            <div class="reference-card">
-                <div class="reference-card__profile">
-                    <img src="/asset/images/profile-picture-person.png" alt="" class="reference-card__profile-picture">
-                    <p class="reference-card__name"><b>Ref1 LAST NAME</b></p>
-                    <p class="reference-card__position"><i>Faucibus arcu odio ultrices tincidunt a purus vestibulum.</i></p>
-                </div>
 
-                <div class="reference-card__body">
-                    <blockquote class="reference-quote">
-                        <p class="reference-quote__text">«​​​​​​​ Lorem ipsum dolor sit amet consectetur. Tristique dui phasellus viverra eget sed. Id id volutpat et tellus hac vestibulum vestibulum nunc. »</p>
-                        <p class="reference-quote__text reference-quote__text--desktop">«​​​​​​​ Tristique dui phasellus viverra eget sed. Id id volutpat et tellus hac vestibulum vestibulum nunc. Tempor sed eget id non aliquam. »</p>
-                    </blockquote>
+            <ReferenceCard 
+                picture="/asset/images/profile-picture-person.png"
+                firstName=""
+                lastName=""
+                position="Faucibus arcu odio ultrices tincidunt a purus vestibulum."
+                quote="Lorem ipsum dolor sit amet consectetur. // Tristique dui phasellus viverra eget sed."
+                pdfUrl="/pdf"
+            />
 
-                    <div class="reference-pdf__container">
-                        <a href="/pdf" class="button reference-pdf-button">Read more</a>
-                    </div>
-                </div>
-            </div>
+            <ReferenceCard 
+                picture="/asset/images/profile-picture-person.png"
+                firstName=""
+                lastName=""
+                position="Faucibus arcu odio ultrices tincidunt a purus vestibulum."
+                quote="Lorem ipsum dolor sit amet consectetur. // Tristique dui phasellus viverra eget sed."
+                pdfUrl="/pdf"
+            />
 
-            <div class="reference-card">
-                <div class="reference-card__profile">
-                    <img src="/asset/images/profile-picture-person.png" alt="" class="reference-card__profile-picture">
-                    <p class="reference-card__name"><b>Ref2 LAST NAME</b></p>
-                    <p class="reference-card__position"><i>Faucibus arcu odio ultrices tincidunt a purus vestibulum.</i></p>
-                </div>
-
-                <div class="reference-card__body">
-                    <blockquote class="reference-quote">
-                        <p class="reference-quote__text">«​​​​​​​ Lorem ipsum dolor sit amet consectetur. Tristique dui phasellus viverra eget sed. Id id volutpat et tellus hac vestibulum vestibulum nunc. »</p>
-                        <p class="reference-quote__text reference-quote__text--desktop">«​​​​​​​ Tristique dui phasellus viverra eget sed. Id id volutpat et tellus hac vestibulum vestibulum nunc. Tempor sed eget id non aliquam. »</p>
-                    </blockquote>
-
-                    <div class="reference-pdf__container">
-                        <a href="/pdf" class="button reference-pdf-button">Read more</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="reference-card">
-                <div class="reference-card__profile">
-                    <img src="/asset/images/profile-picture-person.png" alt="" class="reference-card__profile-picture">
-                    <p class="reference-card__name"><b>Ref3 LAST NAME</b></p>
-                    <p class="reference-card__position"><i>Faucibus arcu odio ultrices tincidunt a purus vestibulum.</i></p>
-                </div>
-
-                <div class="reference-card__body">
-                    <blockquote class="reference-quote">
-                        <p class="reference-quote__text">«​​​​​​​ Lorem ipsum dolor sit amet consectetur. Tristique dui phasellus viverra eget sed. Id id volutpat et tellus hac vestibulum vestibulum nunc. »</p>
-                        <p class="reference-quote__text reference-quote__text--desktop">«​​​​​​​ Tristique dui phasellus viverra eget sed. Id id volutpat et tellus hac vestibulum vestibulum nunc. Tempor sed eget id non aliquam. »</p>
-                    </blockquote>
-
-                    <div class="reference-pdf__container">
-                        <a href="/pdf" class="button reference-pdf-button">Read more</a>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="expertise-carousel__controls">

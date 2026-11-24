@@ -1,0 +1,64 @@
+---
+interface Props {
+    firstName: string;
+    lastName: string;
+    position: string;
+    picture: string;
+    pictureAlt?: string;
+    quote: string;
+    pdfUrl?: string;
+    buttonText?: string;
+}
+
+const {
+    firstName,
+    lastName,
+    position,
+    picture,
+    pictureAlt = "",
+    quote,
+    pdfUrl,
+    buttonText = "Read more",
+} = Astro.props;
+
+// Découpe le texte à chaque fois que tu écris "//" (ou un saut de ligne)
+const quoteLines = quote.split("//").map((line) => line.trim());
+---
+
+<div class="reference-card">
+    <div class="reference-card__profile">
+        <img
+            src={picture}
+            alt={pictureAlt}
+            class="reference-card__profile-picture"
+        />
+        <p class="reference-card__name"><b>{firstName} <span class="reference-card__last-name">{lastName}</span></b></p>
+        <p class="reference-card__position"><i>{position}</i></p>
+    </div>
+
+    <div class="reference-card__body">
+        <blockquote class="reference-quote">
+            <p class="reference-quote__text">
+                « {quoteLines.map((line, index) => (
+                    <>
+                        {line}
+                        {index < quoteLines.length - 1 && <br />}
+                    </>
+                ))} »
+            </p>
+        </blockquote>
+
+        {pdfUrl && (
+            <div class="reference-pdf__container">
+                <a
+                    href={pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button reference-pdf-button"
+                >
+                    {buttonText}
+                </a>
+            </div>
+        )}
+    </div>
+</div>

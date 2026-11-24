@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+    title="Grégory Mugnier’s reference"
+    bodyClass="pdf-viewer-page"
+    mainClass="pdf-viewer-page__main"
+    showHeader={false}
+    showFooter={false}
+    noIndex={true}
+>
+
+    <header class="pdf-viewer-header">
+        <h1 class="pdf-viewer-header__title">Grégory Mugnier’s reference</h1>
+        <a href="/my-references" class="pdf-viewer-header__close" aria-label="Close document">
+            <img src="/asset/graphics/icons/button-pdf-close.svg" alt="" class="pdf-to-reference-button"/>
+        </a>
+    </header>
+
+    <section class="pdf-viewer">
+
+        <aside class="pdf-viewer__sidebar" aria-label="Document versions">
+            <button type="button" class="pdf-viewer__thumb is-active" data-pdf="/asset/pdf/reference-letter-type.pdf">
+                <img src="/asset/images/reference-letter-type.png" alt="" class="pdf-viewer__thumb-img" />
+                <span class="pdf-viewer__thumb-label">English translation</span>
+            </button>
+
+            <button type="button" class="pdf-viewer__thumb" data-pdf="/asset/pdf/original.pdf">
+                <img src="/asset/images/reference-letter-type.png" alt="" class="pdf-viewer__thumb-img" />
+                <span class="pdf-viewer__thumb-label">Original version</span>
+            </button>
+        </aside>
+
+        <div class="pdf-preview">
+            <iframe 
+                src="" 
+                title="Grégory Mugnier’s reference" 
+                class="pdf-preview__frame">
+            </iframe>
+        </div>
+
+    </section>
+
+</Layout>
+
+<script>
+    const PDF_OPTIONS = '#toolbar=0&navpanes=0&scrollbar=0&view=FitH';
+    const iframe = document.querySelector('.pdf-preview__frame') as HTMLIFrameElement;
+    const thumbs = document.querySelectorAll('.pdf-viewer__thumb');
+
+    // Applique les options dès le chargement initial sur le PDF actif
+    const activeThumb = document.querySelector('.pdf-viewer__thumb.is-active') as HTMLElement;
+    if (iframe && activeThumb?.dataset.pdf) {
+        iframe.src = activeThumb.dataset.pdf + PDF_OPTIONS;
+    }
+
+    // Change de PDF et déplace la bordure bleue au clic
+    thumbs.forEach((thumb) => {
+        thumb.addEventListener('click', () => {
+            thumbs.forEach((t) => t.classList.remove('is-active'));
+            thumb.classList.add('is-active');
+
+            const pdfPath = (thumb as HTMLElement).dataset.pdf;
+            if (iframe && pdfPath) {
+                iframe.src = pdfPath + PDF_OPTIONS;
+            }
+        });
+    });
+
+    // Retour intelligent sur la carte exacte de /my-references
+    const closeBtn = document.querySelector('.pdf-viewer-header__close');
+
+    closeBtn?.addEventListener('click', (event) => {
+        if (document.referrer.includes('/my-references') && window.history.length > 1) {
+            event.preventDefault();
+            window.history.back();
+        }
+    });
+</script>
