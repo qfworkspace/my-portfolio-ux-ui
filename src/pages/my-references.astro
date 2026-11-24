@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ReferenceCard from '../components/ReferenceCard.astro';
+import { REFERENCES } from '../data/references';
 ---
 
 <Layout 
@@ -18,25 +19,17 @@ mainClass="references-page__main">
         />
 
         <div class="reference-container">
-
-            <ReferenceCard 
-                picture="/asset/images/profile-picture-person.png"
-                firstName=""
-                lastName=""
-                position="Faucibus arcu odio ultrices tincidunt a purus vestibulum."
-                quote="Lorem ipsum dolor sit amet consectetur. // Tristique dui phasellus viverra eget sed."
-                pdfUrl="/pdf"
-            />
-
-            <ReferenceCard 
-                picture="/asset/images/profile-picture-person.png"
-                firstName=""
-                lastName=""
-                position="Faucibus arcu odio ultrices tincidunt a purus vestibulum."
-                quote="Lorem ipsum dolor sit amet consectetur. // Tristique dui phasellus viverra eget sed."
-                pdfUrl="/pdf"
-            />
-
+            {REFERENCES.map((ref) => (
+                <ReferenceCard 
+                    picture={ref.picture}
+                    pictureAlt={ref.pictureAlt}
+                    firstName={ref.firstName}
+                    lastName={ref.lastName}
+                    position={ref.position}
+                    quote={ref.quote}
+                    pdfUrl={ref.versions.length > 0 ? `/references/${ref.slug}` : undefined}
+                />
+            ))}
         </div>
 
         <div class="expertise-carousel__controls">
