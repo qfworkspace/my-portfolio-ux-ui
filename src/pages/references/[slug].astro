@@ -57,29 +57,44 @@ const { reference } = Astro.props;
 
 <script>
     const PDF_OPTIONS = '#toolbar=0&navpanes=0&scrollbar=0&view=FitH';
-    const iframe = document.querySelector('.pdf-preview__frame') as HTMLIFrameElement;
+    const previewContainer = document.querySelector('.pdf-preview');
     const thumbs = document.querySelectorAll('.pdf-viewer__thumb');
+
+    // Remplace l'iframe à chaque clic pour ne jamais polluer l'historique du navigateur
+    function loadPdfWithoutHistory(pdfPath: string) {
+        if (!previewContainer) return;
+
+        const existingIframe = previewContainer.querySelector('iframe');
+        const title = existingIframe?.title || 'Reference document';
+
+        const newIframe = document.createElement('iframe');
+        newIframe.src = pdfPath + PDF_OPTIONS;
+        newIframe.title = title;
+        newIframe.className = 'pdf-preview__frame';
+
+        previewContainer.replaceChildren(newIframe);
+    }
 
     // Applique les options dès le chargement initial sur le PDF actif
     const activeThumb = document.querySelector('.pdf-viewer__thumb.is-active') as HTMLElement;
-    if (iframe && activeThumb?.dataset.pdf) {
-        iframe.src = activeThumb.dataset.pdf + PDF_OPTIONS;
+    if (activeThumb?.dataset.pdf) {
+        loadPdfWithoutHistory(activeThumb.dataset.pdf);
     }
 
-    // Change de PDF et déplace la bordure bleue au clic
+    // Change de PDF et déplace la bordure bleue au clic sans créer d'historique
     thumbs.forEach((thumb) => {
         thumb.addEventListener('click', () => {
             thumbs.forEach((t) => t.classList.remove('is-active'));
             thumb.classList.add('is-active');
 
             const pdfPath = (thumb as HTMLElement).dataset.pdf;
-            if (iframe && pdfPath) {
-                iframe.src = pdfPath + PDF_OPTIONS;
+            if (pdfPath) {
+                loadPdfWithoutHistory(pdfPath);
             }
         });
     });
 
-    // Retour intelligent sur la carte exacte de /my-references
+    // Retour direct sur la carte exacte de /my-references en un seul clic sur la croix
     const closeBtn = document.querySelector('.pdf-viewer-header__close');
 
     closeBtn?.addEventListener('click', (event) => {

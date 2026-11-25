@@ -42,7 +42,12 @@ const quoteLines = quote.split("//").map((line) => line.trim());
                 « {quoteLines.map((line, index) => (
                     <>
                         {line}
-                        {index < quoteLines.length - 1 && <br />}
+                        {index < quoteLines.length - 1 && (
+                            <>
+                                {" "}
+                                <span class="reference-quote__break" aria-hidden="true"></span>
+                            </>
+                        )}
                     </>
                 ))} »
             </p>
@@ -52,8 +57,6 @@ const quoteLines = quote.split("//").map((line) => line.trim());
             <div class="reference-pdf__container">
                 <a
                     href={pdfUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     class="button reference-pdf-button"
                 >
                     {buttonText}

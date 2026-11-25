@@ -2285,9 +2285,15 @@ html:has(body.page-404) {
     text-overflow: ellipsis;
 }
 
-/* .reference-quote__text--desktop {
+.reference-quote__text br {
+    content: "";
+    display: block;
+    margin-bottom: 10px; /* Ajuste l'espace entre les deux paragraphes */
+}
+
+.reference-quote__break {
     display: none;
-} */
+}
 
 .reference-pdf-button {
     background-color: var(--blue-900);
@@ -2361,6 +2367,11 @@ html:has(body.page-404) {
 
     .reference-quote {
         height: fit-content;
+    }
+
+    .reference-quote__break {
+        display: block;
+        height: 1em; /* Crée l'équivalent d'une ligne vide entre les deux paragraphes */
     }
 }
 
