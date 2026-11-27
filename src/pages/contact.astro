@@ -56,46 +56,50 @@ import Layout from '../layouts/Layout.astro';
             <form class="contact-page__form-group contact-page__form-group--inactive">
 
                 <div class="form-container contact-page__form-container">
-                    <label for="user-first-name" class="form__title">First name</label>
+                    <label for="user-first-name" class="form__title">First name*</label>
                     <input
                     type="text"
                     id="user-first-name"
                     name="user-first-name"
                     class="form-placeholder form-placeholder--to-fill"
                     placeholder="Enter your first name"
+                    required
                     />
                 </div>
                 
                 <div class="contact-page__form-container">
-                    <label for="user-last-name" class="form__title">Last name</label>
+                    <label for="user-last-name" class="form__title">Last name*</label>
                     <input
                     type="text"
                     id="user-last-name"
                     name="user-last-name"
                     class="form-placeholder form-placeholder--to-fill"
                     placeholder="Enter your last name"
+                    required
                     />
                 </div>
 
                 <div class="contact-page__form-container">
-                    <label for="user-email" class="form__title">Email</label>
+                    <label for="user-email" class="form__title">Email*</label>
                     <input
                     type="email"
                     id="user-email"
                     name="user-email"
                     class="form-placeholder form-placeholder--to-fill"
                     placeholder="Enter your email"
+                    required
                     />
                 </div>
 
                 <div class="contact-page__form-container">
-                    <label for="user-phone-number" class="form__title">Phone number</label>
+                    <label for="user-phone-number" class="form__title">Phone number*</label>
                     <input
                     type="tel"
                     id="user-phone-number"
                     name="user-phone-number"
                     class="form-placeholder form-placeholder--to-fill"
                     placeholder="Enter your phone number"
+                    required
                     />
                 </div>  
 
@@ -109,13 +113,15 @@ import Layout from '../layouts/Layout.astro';
                     rows="3"
                     ></textarea>
                 </div>  
+
+                <p class="form__required-note">* Required fields</p>
                 
                 <button type="submit" class="button form-group__submit-button">Submit</button>
             </form>
 
         </section>
 
-        <aside class="section contact-page__aside">
+        <aside class="contact-page__aside">
             <a href="/" class="home-link"><img src="/asset/graphics/logos/logo-neutral-100.svg" alt="My logo" class="contact-page__logo"></a>
             <p class="contact-page__side-text">Thank you for your interest</p>
             <a href="https://www.linkedin.com/in/qetsia-fontange/" target="_blank" rel="noopener noreferrer" class="icon-container"><img src="/asset/graphics/icons/icon-linkedin.svg" alt="" class="contact-page__icon"></a>
@@ -124,3 +130,157 @@ import Layout from '../layouts/Layout.astro';
 
     </div>
 </Layout>
+
+<script>
+    // 1. Tes coordonnées à révéler dans l'onglet "You Contact Me"
+    const myContactInfo = [
+        { label: "First name", value: "Qetsia", copyable: false },
+        { label: "Last name", value: "Fontange", copyable: false },
+        { label: "Email", value: "qetsia.fontange@gmail.com", copyable: true },
+        { label: "Phone number", value: "+44 7380 880764", copyable: true }
+    ];
+
+    // 2. Gestion du basculement d'onglets + effet de glissement de la pilule bleue
+    const navContainer = document.querySelector('.contact-page__nav') as HTMLElement | null;
+    const navButtons = document.querySelectorAll('.contact-page__nav-button');
+    const youContactPanel = document.querySelector('div.contact-page__form-group');
+    const iContactPanel = document.querySelector('form.contact-page__form-group');
+    const switchToFormBtn = document.querySelector('.form-group--active__button');
+
+    function updatePillPosition(activeBtn: HTMLElement) {
+        if (!navContainer || !activeBtn) return;
+        navContainer.style.setProperty('--pill-width', `${activeBtn.offsetWidth}px`);
+        navContainer.style.setProperty('--pill-x', `${activeBtn.offsetLeft}px`);
+    }
+
+    function showTab(tabIndex: number) {
+        navButtons.forEach((btn, index) => {
+            const isActive = index === tabIndex;
+            btn.classList.toggle('contact-page__nav-button--active', isActive);
+            if (isActive) {
+                updatePillPosition(btn as HTMLElement);
+            }
+        });
+
+        if (tabIndex === 0) {
+            youContactPanel?.classList.remove('contact-page__form-group--inactive');
+            youContactPanel?.classList.add('contact-page__form-group--active');
+            iContactPanel?.classList.add('contact-page__form-group--inactive');
+            iContactPanel?.classList.remove('contact-page__form-group--active');
+        } else {
+            iContactPanel?.classList.remove('contact-page__form-group--inactive');
+            iContactPanel?.classList.add('contact-page__form-group--active');
+            youContactPanel?.classList.add('contact-page__form-group--inactive');
+            youContactPanel?.classList.remove('contact-page__form-group--active');
+        }
+    }
+
+    // Positionne la pilule bleue sur le premier bouton dès le chargement
+    if (navButtons[0]) {
+        updatePillPosition(navButtons[0] as HTMLElement);
+    }
+
+    // Recalcule la position si la fenêtre est redimensionnée
+    window.addEventListener('resize', () => {
+        const currentActive = document.querySelector('.contact-page__nav-button--active') as HTMLElement | null;
+        if (currentActive) updatePillPosition(currentActive);
+    });
+
+    navButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => showTab(index));
+    });
+
+    // Lien "Or I contact you" en bas de la première carte
+    switchToFormBtn?.addEventListener('click', () => showTab(1));
+
+    // 3. Révélation progressive + copie au clic sur "Click here"
+    const interactiveCards = document.querySelectorAll('.contact-page__form-container--interactif');
+
+    interactiveCards.forEach((card, index) => {
+        const placeholder = card.querySelector('.form-placeholder') as HTMLElement | null;
+        const info = myContactInfo[index];
+        if (!placeholder || !info) return;
+
+        let isRevealed = false;
+
+        card.addEventListener('click', async () => {
+            if (!isRevealed) {
+                placeholder.textContent = info.value;
+                isRevealed = true;
+            } else if (info.copyable) {
+                await navigator.clipboard.writeText(info.value);
+                const originalText = placeholder.textContent;
+                placeholder.textContent = `${info.value} (Copied!)`;
+                setTimeout(() => {
+                    placeholder.textContent = originalText;
+                }, 1500);
+            }
+        });
+    });
+
+    // 4. Sauvegarde automatique des champs du formulaire contre le refresh accidentel
+    function enableFormAutoSave(formSelector: string, storageKey: string) {
+        const form = document.querySelector<HTMLFormElement>(formSelector);
+        if (!form) return;
+
+        const fields = form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input[name], textarea[name]');
+
+        const savedData = sessionStorage.getItem(storageKey);
+        if (savedData) {
+            const parsedData = JSON.parse(savedData) as Record<string, string>;
+            fields.forEach((field) => {
+                if (parsedData[field.name]) {
+                    field.value = parsedData[field.name];
+                }
+            });
+        }
+
+        form.addEventListener('input', () => {
+            const currentData: Record<string, string> = {};
+            fields.forEach((field) => {
+                currentData[field.name] = field.value;
+            });
+            sessionStorage.setItem(storageKey, JSON.stringify(currentData));
+        });
+    }
+
+    enableFormAutoSave('form.contact-page__form-group', 'draft_contact_form');
+
+    // 5. Envoi du formulaire "I Contact You" via Web3Forms
+    iContactPanel?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const form = e.target as HTMLFormElement;
+        const submitBtn = form.querySelector('.form-group__submit-button') as HTMLButtonElement;
+        const formData = new FormData(form);
+
+        formData.append("access_key", "2a0c508c-1835-40ac-a4eb-1b85b08729ab");
+        formData.append("from_name", `My portfolio – ${formData.get("user-first-name")} ${formData.get("user-last-name")}`);
+        formData.append("subject", "New contact request – Contact Page");
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                submitBtn.textContent = "Message sent!";
+                form.reset();
+                sessionStorage.removeItem('draft_contact_form');
+            } else {
+                submitBtn.textContent = "Error, please try again";
+            }
+        } catch {
+            submitBtn.textContent = "Network error";
+        } finally {
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Submit";
+            }, 3000);
+        }
+    });
+</script>

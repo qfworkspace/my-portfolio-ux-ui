@@ -113,6 +113,14 @@
     background-color: #ffffff;
 }
 
+.form-placeholder--to-fill {
+    font-style: normal;
+}
+
+.form-placeholder--to-fill::placeholder {
+    font-style: italic;
+}
+
 
 
 /* Components Sections */

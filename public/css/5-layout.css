@@ -394,12 +394,26 @@
 }
 
 .contact-page__nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    gap: var(--spacing-container-gap); /* former: var(--spacing-container-gap)*/
     background-color: var(--neutral-50-transparency-70);
-    padding-right: var(--spacing-btn-padding-inline);
     border-radius: var(--radius-btn);
+}
+
+.contact-page__nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--pill-width, 0px);
+    transform: translateX(var(--pill-x, 0px));
+    background-color: var(--blue-50);
+    border-radius: var(--radius-btn);
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 0;
 }
 
             /* Contact Page Form */
@@ -410,11 +424,16 @@
     gap: 8px;
 }
 
+.contact-page__nav-button {
+    position: relative;
+    z-index: 1;
+    padding: var(--spacing-btn-padding-block) var(--spacing-btn-padding-inline);
+    border-radius: var(--radius-btn);
+}
+
 .contact-page__nav-button--active {
     background-color: var(--blue-50);
     width: fit-content;
-    padding: var(--spacing-btn-padding-block) var(--spacing-btn-padding-inline);
-    border-radius: var(--radius-btn);
 }
 
 .contact-page__form-group {
@@ -441,6 +460,10 @@
 
 .form-group--active__button {
     align-self: center;
+}
+
+.form__required-note {
+    font-style: italic;
 }
 
             /* Contact Page Aside */
@@ -471,13 +494,27 @@
     .contact-page__main {
         display: flex;
         flex-direction: row-reverse;
+        align-items: flex-start; /* Indispensable pour que sticky fonctionne */
+    }
+
+    .contact-page__form {
+        flex: 1; /* Permet au panneau droit d'occuper tout l'espace restant */
     }
 
     .contact-page__aside {
+        position: sticky;
+        top: 0; /* Indispensable pour déclencher le blocage au scroll */
+        height: 100vh;
+        height: 100dvh;
         width: fit-content;
+        flex-shrink: 0; /* Empêche la sidebar d'être écrasée par le formulaire */
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+
+        margin-inline: auto;
+        padding-inline: var(--spacing-body-padding-inline);
+        padding-block: 50px;
     }
 
     .contact-page__side-text {
